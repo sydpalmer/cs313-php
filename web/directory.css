@@ -1,0 +1,10 @@
+div{
+	text-align:center;
+}
+h1{
+	color: teal;
+}
+ul{
+	list-style-type:disc; 
+	list-style-position:inside;
+}

@@ -1,0 +1,24 @@
+body{
+	text-align: center;
+	background: url(pokemonBackground.JPG);
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: white;
+}
+a:hover{
+	font-size: 150%;
+	background-color: black;
+	color: white;
+}
+#personalInfo{
+	background-color: black;
+	color: white;
+	padding: 10px;
+	display: none;
+}
+#name:hover + #personalInfo {
+    display: block;
+}
+#profilePic:hover + #personalInfo {
+    display: block;
+}
