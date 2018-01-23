@@ -7,18 +7,14 @@
    <link rel="stylesheet" type="text/css" href="homePage.css">
    <title> Sydney Palmer's Home Page </title>
    <script type="text/javascript">
-		function mouseOver() {
-			document.getElementById("profilePic").width = 150%;
-			document.getElementById("profilePic").height = 150%;
-		}
-		function mouseOut{
+		function larger() {
 			document.getElementById("profilePic").width = 150%;
 			document.getElementById("profilePic").height = 150%;
 		}
 	</script>
 </head>
 <body>
-	<img src="ChristmasPic.jpg" id="profilePic" width="210px" height="225px" onmouseover="mouseOver();" onmouseout="mouseOut();">
+	<img src="ChristmasPic.jpg" id="profilePic" width="210px" height="225px" onclick="larger();">
 	<h1 id="name">Sydney Palmer</h1>
 	<p><a href="directory.html">Assignments</a></p>
 	<div>
