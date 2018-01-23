@@ -8,18 +8,18 @@
    <title> Sydney Palmer's Home Page </title>
    <script type="text/javascript">
 		function mouseOver() {
-			document.getElementById("name").style.color = "blue";
-			document.getElementById("name").style.fontweight = "bold";
+			document.getElementById("profilePic").width = 150%;
+			document.getElementById("profilePic").height = 150%;
 		}
 		function mouseOut{
-			document.getElementById("name").style.color = "black";
-			document.getElementById("name").style.fontweight = "normal";
+			document.getElementById("profilePic").width = 150%;
+			document.getElementById("profilePic").height = 150%;
 		}
 	</script>
 </head>
 <body>
-	<img src="ChristmasPic.jpg" id="profilePic" width="210px" height="225px">
-	<h1 id="name" onmouseover="mouseOver();" onmouseout="mouseOut();">Sydney Palmer</h1>
+	<img src="ChristmasPic.jpg" id="profilePic" width="210px" height="225px" onmouseover="mouseOver();" onmouseout="mouseOut();">
+	<h1 id="name">Sydney Palmer</h1>
 	<p><a href="directory.html">Assignments</a></p>
 	<div>
 		<p>My name is Sydney Palmer. I started out in the mechanical engineering program, but after two years, I decided that there was just too much physics and I switched over to Software Engineering.</p>
