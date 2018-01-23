@@ -21,3 +21,6 @@ div{
 #personal{
 	display: none;
 }
+#info:hover{
+	cursor: pointer;
+}
