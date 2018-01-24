@@ -1,8 +1,8 @@
 <?php
-	$name = $_GET["name"];
-	$email = $_GET["email"];
-	$major = $_GET["major"];
-	$comments = $_GET["comments"];
+	$name = $_POST["name"];
+	$email = $_POST["email"];
+	$major = $_POST["major"];
+	$comments = $_POST["comments"];
 
 	echo "Your name is: " . $name . "<br>Your email is: " . $email . " <a href='mailto:" . $email . "'>" . "Send mail!" . "</a>" . "<br>Your major is: " . $major . "<br>Comments: " . $comments;
 ?>
