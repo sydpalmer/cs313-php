@@ -4,5 +4,5 @@
 	$major = $_GET["major"];
 	$comments = $_GET["comments"];
 
-	echo "Your name is: " . $name . "<br>Your email is: " . $email . "<a href='mailto:" . $email . "'>" . $email . "</a>" . "<br>Your major is: " . $major . "<br>Comments: " . $comments;
+	echo "Your name is: " . $name . "<br>Your email is: " . $email . " <a href='mailto:" . $email . "'>" . "Send mail!" . "</a>" . "<br>Your major is: " . $major . "<br>Comments: " . $comments;
 ?>
