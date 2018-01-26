@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang = "en" >
+   <head>
+      <meta charset = "utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title> Contact Us | Palmer Projects </title>
+      <p id = "top"><a href="#bottom">Jump to Bottom</a></p>
+      <link rel="stylesheet" type="text/css" href="shoppingCart.css">
+      <style>
+         form{
+            margin-top: 20px;
+         }
+         table#3 {
+            font-family: sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+         }
+         td#contactTble, th#contactTble {
+            border: 0px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            background-color: rgba(0, 152, 163, 0.2);
+         }
+         tr:nth-child(even)#contactTble {
+            font-size: 18px;
+            font-weight: bold;
+            padding: 8px;
+            background-color: rgba(0, 152, 163, 0.4);;
+         }
+         table#contactIcons{
+            margin-left: 200px;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>Contact Us</h1>
+      <ul>
+         <li><a href="shoppingCart.html">Shop</a></li>
+         <li style = "float: right"><a href="contact.html">Contact Us</a></li>
+         <li style = "float: right"><a href="about.html">About Us</a></li>
+         <li class="dropdown" style="float: right;">
+            <a href="viewCart.html" class="dropbtn">
+               <img src="">
+               <div class="dropdown-content">
+                  <a href="checkOut.html">Check Out</a>
+               </div>
+            </a>
+         </li>
+         
+      </ul>
+      <form action= "mailto:sydneylynhayes@gmail.com" method="post" enctype="text/plain">
+         <table id="#3"; frame="box">
+         <tr id="contactTble">
+            <th id="contactTble" style = "text-align:center; font-size: 28px">Contact Us</th>
+         </tr>
+         <tr id="contactTble">
+            <td id="contactTble">What is your contact purpose?</td>
+         </tr>
+         <tr id="contactTble">
+            <td id="contactTble">
+               <input type="checkbox" name="p1" value="wantToBuy">I want to buy a product<br>
+               <input type="checkbox" name="p1" value="questionPurchase">I have a question about my purchase<br>
+               <input type="checkbox" name="p1" value="questionGeneral">I have a general question<br> 
+               <input type="checkbox" name="p1" value="otherPurpose">Other <input type="text" name="other"><br> 
+            </td>
+         </tr>
+         <tr id="contactTble">
+            <td id="contactTble">Do you want correspondence back?</td>
+         </tr>
+         <tr id="contactTble">
+            <td id="contactTble">
+               <input type="radio" name="choiceContact" value="Yes"> Yes<br>
+               <input type="radio" name="choiceContact" value="No"> No<br>
+            </td>
+         </tr>
+         <tr id="contactTble">
+            <td id="contactTble">Questions or Comments:</td>
+         </tr>
+         <tr id="contactTble">
+            <td id="contactTble">
+               <input type="text" name="comments">
+            </td>
+         </tr>
+         <tr id="contactTble">
+            <td id="contactTble">Correspondence back:</td>
+         </tr>
+         <tr id="contactTble">
+            <td id="contactTble">
+               Email: <input type="email" name="email"><br>
+               Phone: <input type="tel" name="telNum"><br>
+               Other: <input type="text" name="other"><br><br/>
+               <button type="reset" value="Reset">Reset</button>
+               <button type="submit" value="Send">Send</button>
+            </td>
+         </tr>
+         </table>
+      </form>
+      <br />
+      <table id= "contactIcons" align = "left">
+      <tr>
+         <th>
+            <a href="mailto:sydneylynhayes@gmail.com">
+               <img src = "http://socialmediamarketingkelowna.com/wp-content/uploads/2012/11/email-icon-blue-envelope-with-@-sign-transparent-background.gif" alt = "mail" style="width:20px;height:20px;">
+            </a>
+         </th>
+         <th>
+            <a href="https://www.facebook.com/sydney.hayes.37" target = "_blank">
+               <img src = "https://1.bp.blogspot.com/-WSdqH3gMHDk/U-xndvvQYrI/AAAAAAAABwg/9OLHbIjiTF8/s1600/facebook%2Blogo%2Bpng%2Btransparent%2Bbackground.png" alt = "fb" style="width:20px;height:20px;">
+            </a>    
+         </th>
+         <th>
+            <a href="https://www.linkedin.com/in/sydney-palmer-ab6116133/" target = "_blank">
+               <img src = "http://www.mountpisgahschool.org/editoruploads/images/Buttons/linkedin.png" alt = "in" style="width:20px;height:20px;">
+            </a>    
+         </th>
+         <th>
+            <a href="https://twitter.com/SoccerStar0214" target = "_blank">
+               <img src = "https://www.modlabs.com/wp-content/uploads/2015/11/Twitter-Logo.png" alt = "twit" style="width:20px;height:20px;">
+            </a> 
+         </th>
+      </tr>
+      </table> <br /> <br /> <br />
+      <footer id = "bottom"
+         <p><span>Posted by: Sydney Palmer</span></p>
+         <p><a href="#top">Jump to Top</a></p>
+   </footer>
+   </body>
+</html>
