@@ -181,6 +181,7 @@ function makeCheckBoxes() {
 }
 
 function remmoveCartItems() {
+	var remove = document.forms[0];
 	for (var i = 0; i < added.length; i++) {
 		if(remove[i].checked && remove[i].value == "$5 Black and Cream Bracelet"){
 			sessionStorage.removeItem("buy1");
