@@ -160,7 +160,7 @@ function loadCart(){
 	}
 
 	var text = "<ul>";
-	for (i = 0; i < added.length; i++) {
+	for (var i = 0; i < added.length; i++) {
     	text += "<li>" + added[i] + "</li>";
 	}
 	text += "</ul>";
