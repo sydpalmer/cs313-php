@@ -244,8 +244,6 @@ function remmoveCartItems() {
 		}
 
 	}
-	added = [];
-	loadCart();
 }
 
 function confirm() {
