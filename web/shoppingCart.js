@@ -326,7 +326,7 @@ function confirm() {
 	address.push(sessionStorage.getItem('state'));
 	address.push(sessionStorage.getItem('zip'));
 
-	if(address.length == 5){
+	if(address.length == 4){
 		document.getElementById("shipped").innerHTML = 
 			address[0] + "<br>" + address[1] + "<br>" + address[2]
 			+ ", " + address[3] + " " + address[4];
