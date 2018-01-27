@@ -1,10 +1,12 @@
 var count = 0;
 var cost = 0;
+var added = [];
 function addToCart(key, value) {
 	if(typeof(Storage) !== "undefined") {
 		sessionStorage.setItem(key, value);
 		alert("Item added to cart");
 		count += 1;
+		added.push(value);
 
 	    if (key == "buy1"){
 			cost += 5;
@@ -94,4 +96,8 @@ function addToCart(key, value) {
 	}else{
 		alert("Sorry, your browser does not support web storage...");
 	}
+}
+
+function loadCart(){
+	document.getElementById("itemsInCart").innerHTML = added;
 }
