@@ -170,11 +170,80 @@ function loadCart(){
 	document.getElementById("itemsInCart").innerHTML = text;
 }
 
+var input = "<b>Check which items you want to remove: </b><br>";
 function makeCheckBoxes() {
-	var input = "<b>Check which items you want to remove: </b><br>";
+	
 	for (var i = 0; i < added.length;i++) {
 		input += "<input type='checkbox' name='remove' value='" + 
 		added[i] + "'> Item " + (i + 1) + " ";
 	}
 	document.getElementById("removeItems").innerHTML = input;
+}
+
+function remmoveCartItems() {
+	for (var i = 0; i < added.length; i++) {
+		if(remove[i].checked && remove[i].value == "$5 Black and Cream Bracelet"){
+			sessionStorage.removeItem("buy1");
+		}
+		if(remove[i].checked && remove[i].value == "$5 Small Blue Bracelet"){
+			sessionStorage.removeItem("buy2");
+		}
+		if(remove[i].checked && remove[i].value == "$5 Two-layer Black Bracelet"){
+			sessionStorage.removeItem("buy3");
+		}
+		if(remove[i].checked && remove[i].value == "$5 Teal Bracelet"){
+			sessionStorage.removeItem("buy4");
+		}
+		if(remove[i].checked && remove[i].value == "$5 Teal and Blue Bracelet"){
+			sessionStorage.removeItem("buy5");
+		}
+		if(remove[i].checked && remove[i].value == "$5 Small Black Bracelet"){
+			sessionStorage.removeItem("buy6");
+		}
+		if(remove[i].checked && remove[i].value == "$5 Black Bead Band Watch"){
+			sessionStorage.removeItem("buy7");
+		}
+		if(remove[i].checked && remove[i].value == "$5 Blue and Green Bracelet"){
+			sessionStorage.removeItem("buy8");
+		}
+		if(remove[i].checked && remove[i].value == "$5 CTR Bracelet"){
+			sessionStorage.removeItem("buy9");
+		}
+		if(remove[i].checked && remove[i].value == "$5 Multi-layer Black Bracelet"){
+			sessionStorage.removeItem("buy10");
+		}
+		if(remove[i].checked && remove[i].value == "$10 Earth Necklace"){
+			sessionStorage.removeItem("buy11");
+		}
+		if(remove[i].checked && remove[i].value == "$10 Green Pendant on chain Necklace"){
+			sessionStorage.removeItem("buy12");
+		}
+		if(remove[i].checked && remove[i].value == "$10 Green and Cream Necklace"){
+			sessionStorage.removeItem("buy13");
+		}
+		if(remove[i].checked && remove[i].value == "$10 Cream and Green Necklace"){
+			sessionStorage.removeItem("buy14");
+		}
+		if(remove[i].checked && remove[i].value == "$10 Blue Necklace"){
+			sessionStorage.removeItem("buy15");
+		}
+		if(remove[i].checked && remove[i].value == "$3 Light Blue Earrings"){
+			sessionStorage.removeItem("buy16");
+		}
+		if(remove[i].checked && remove[i].value == "$3 Dark Blue Earrings"){
+			sessionStorage.removeItem("buy17");
+		}
+		if(remove[i].checked && remove[i].value == "$3 Ice Earrings"){
+			sessionStorage.removeItem("buy18");
+		}
+		if(remove[i].checked && remove[i].value == "$3 Green Hoop Earrings"){
+			sessionStorage.removeItem("buy19");
+		}
+		if(remove[i].checked && remove[i].value == "$3 Blue Hoop Earrings"){
+			sessionStorage.removeItem("buy20");
+		}
+
+	}
+	added = [];
+	loadCart();
 }
