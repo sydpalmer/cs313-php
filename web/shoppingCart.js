@@ -9,61 +9,61 @@ function addToCart(value) {
 	    if (value == "buy1"){
 			cost += 5;
 	     }
- 	    else if (value == "buy2"){
+ 	    if (value == "buy2"){
 		    cost += 5;
 	    }
-	    else if (value == "buy3"){
+	    if (value == "buy3"){
 		    cost += 5;
 		}
-	    else if (value == "buy4"){
+	    if (value == "buy4"){
 		    cost += 5;
 	    }
-        else if (value == "buy5"){
+        if (value == "buy5"){
 		    cost += 5;
 	    }
-	    else if (value == "buy6"){
+	    if (value == "buy6"){
 		    cost += 5;
 	    }
-	    else if (value == "buy7"){
+	    if (value == "buy7"){
 		    cost += 5;
 	    }
-	    else if (value == "buy8"){
+	    if (value == "buy8"){
 		    cost += 5;
 	    }
-        else if (value == "buy9"){
+        if (value == "buy9"){
 		    cost += 5;
 	    }
-	    else if (value == "buy10"){
+	    if (value == "buy10"){
 		    cost += 5;
 	    }
-        else if (value == "buy11"){
+        if (value == "buy11"){
 		    cost += 10;
 	    }
- 	    else if (value == "buy12"){
+ 	    if (value == "buy12"){
 		     cost += 10;
 	    }
-	    else if (value == "buy13"){
+	    if (value == "buy13"){
 		    cost += 10;
 	    }
-	    else if (value == "buy14"){
+	    if (value == "buy14"){
 		    cost += 10;
 	    }
-        else if (value == "buy15"){
+        if (value == "buy15"){
 		    cost += 10;
 	    }
-	    else if (value == "buy16"){
+	    if (value == "buy16"){
 		    cost += 3;
 	     }
-	    else if (value == "buy17"){
+	    if (value == "buy17"){
 		    cost += 3;
 	    }
-	    else if (value == "buy18"){
+	    if (value == "buy18"){
 		    cost += 3;
 	    }
-        else if (value == "buy19"){
+        if (value == "buy19"){
 		    cost += 3;
 	    }
-	    else if (value == "buy20"){
+	    if (value == "buy20"){
 		    cost += 3;
 	    }
 
