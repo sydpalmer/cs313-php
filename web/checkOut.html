@@ -5,6 +5,12 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
    <meta name="viewport" content="width=device-width, initial-scale=1" />
    <link rel="stylesheet" type="text/css" href="shoppingCart.css">
+   <style type="text/css">
+      td:nth-child(1){
+         font-weight: bold;
+         text-align: right;
+      }
+   </style>
    <title>Check Out</title>
 </head>
 <body>
@@ -20,7 +26,50 @@
                <a href="checkOut.html">Check Out</a>
             </div>
          </li>
-         
       </ul>
+
+      <h3>Shipping information:</h3>
+      <div>
+         <table>
+            <form action="shoppingCart.php">
+               <tr>
+                  <td>Street:</td>
+                  <td><input type="text" name="street" required></td>
+               </tr>
+               <tr>
+                  <td>Apartment #: </td>
+                  <td><input type="text" name="apt"></td>
+               </tr>
+               <tr>
+                  <td>City: </td>
+                  <td><input type="text" name="city" required></td>
+               </tr>
+               <tr>
+                  <td>State: </td>
+                  <td><input type="text" name="state" id="state" maxlength="2" onblur="cap();" required></td>
+               </tr>
+               <tr>
+                  <td>ZIP code:</td>
+                  <td>
+                     <input type="text" name="zip" maxlength="5" required>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <a href="viewCart.html">Return to Cart</a>
+                  </td>
+                  <td>
+                     <input type="submit" name="submit" value="Purchase">
+                  </td>
+               </tr>
+            </form>
+         </table>
+      </div>
+      <script type="text/javascript">
+         cap(){
+            var x = document.getElementById("state");
+            x.value = x.value.toUpperCase();
+         }
+      </script>
 </body>
 </html>
