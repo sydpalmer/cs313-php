@@ -250,8 +250,8 @@ function remmoveCartItems() {
 
 function confirm() {
 	var text, i, len;
-	len = "Purchased items:<br>" + added.length;
-	text = added[0];
+	len = added.length;
+	text = "Purchased items:<br>" + added[0];
 	for(i = 1; i < len; i++){
 		text += ", " + added[i];
 	}
