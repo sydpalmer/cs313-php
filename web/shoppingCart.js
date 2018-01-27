@@ -174,14 +174,13 @@ var input = "<b>Check which items you want to remove: </b><br>";
 function makeCheckBoxes() {
 	
 	for (var i = 0; i < added.length;i++) {
-		input += "<input type='checkbox' name='remove' value='" + 
+		input += "<input type='checkbox' name='remove[]' value='" + 
 		added[i] + "'> Item " + (i + 1) + " ";
 	}
 	document.getElementById("removeItems").innerHTML = input;
 }
 
 function remmoveCartItems() {
-	var remove = document.forms[0];
 	for (var i = 0; i < added.length; i++) {
 		if(remove[i].checked && remove[i].value == "$5 Black and Cream Bracelet"){
 			sessionStorage.removeItem("buy1");
