@@ -1,12 +1,10 @@
 var count = 0;
 var cost = 0;
-var added = [];
 function addToCart(key, value) {
 	if(typeof(Storage) !== "undefined") {
 		sessionStorage.setItem(key, value);
 		alert("Item added to cart");
 		count += 1;
-		added.push(sessionStorage.getItem(key));
 
 	    if (key == "buy1"){
 			cost += 5;
@@ -99,5 +97,27 @@ function addToCart(key, value) {
 }
 
 function loadCart(){
+	var added =[];
+	added.push(sessionStorage.getItem('buy1'));
+	added.push(sessionStorage.getItem('buy2'));
+	added.push(sessionStorage.getItem('buy3'));
+	added.push(sessionStorage.getItem('buy4'));
+	added.push(sessionStorage.getItem('buy5'));
+	added.push(sessionStorage.getItem('buy6'));
+	added.push(sessionStorage.getItem('buy7'));
+	added.push(sessionStorage.getItem('buy8'));
+	added.push(sessionStorage.getItem('buy9'));
+	added.push(sessionStorage.getItem('buy10'));
+	added.push(sessionStorage.getItem('buy11'));
+	added.push(sessionStorage.getItem('buy12'));
+	added.push(sessionStorage.getItem('buy13'));
+	added.push(sessionStorage.getItem('buy14'));
+	added.push(sessionStorage.getItem('buy15'));
+	added.push(sessionStorage.getItem('buy16'));
+	added.push(sessionStorage.getItem('buy17'));
+	added.push(sessionStorage.getItem('buy18'));
+	added.push(sessionStorage.getItem('buy19'));
+	added.push(sessionStorage.getItem('buy20'));
+
 	document.getElementById("itemsInCart").innerHTML = added;
 }
