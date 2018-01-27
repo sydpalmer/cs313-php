@@ -6,64 +6,64 @@ function addToCart(value) {
 		count += 1;
 
 		var cost = 0;
-	    if (value = "buy1"){
+	    if (value == "buy1"){
 			cost += 5;
 	     }
- 	    if (value = "buy2"){
+ 	    else if (value == "buy2"){
 		    cost += 5;
 	    }
-	    if (val = "buy3"){
+	    else if (value == "buy3"){
 		    cost += 5;
 		}
-	    if (value = "buy4"){
+	    else if (value == "buy4"){
 		    cost += 5;
 	    }
-        if (value = "buy5"){
+        else if (value == "buy5"){
 		    cost += 5;
 	    }
-	    if (value = "buy6"){
+	    else if (value == "buy6"){
 		    cost += 5;
 	    }
-	    if (value = "buy7"){
+	    else if (value == "buy7"){
 		    cost += 5;
 	    }
-	    if (value = "buy8"){
+	    else if (value == "buy8"){
 		    cost += 5;
 	    }
-        if (value = "buy9"){
+        else if (value == "buy9"){
 		    cost += 5;
 	    }
-	    if (value = "buy10"){
+	    else if (value == "buy10"){
 		    cost += 5;
 	    }
-        if (value = "buy11"){
+        else if (value == "buy11"){
 		    cost += 10;
 	    }
- 	    if (value = "buy12"){
+ 	    else if (value == "buy12"){
 		     cost += 10;
 	    }
-	    if (value = "buy13"){
+	    else if (value == "buy13"){
 		    cost += 10;
 	    }
-	    if (value = "buy14"){
+	    else if (value == "buy14"){
 		    cost += 10;
 	    }
-        if (value = "buy15"){
+        else if (value == "buy15"){
 		    cost += 10;
 	    }
-	    if (value = "buy16"){
+	    else if (value == "buy16"){
 		    cost += 3;
 	     }
-	    if (value = "buy17"){
+	    else if (value == "buy17"){
 		    cost += 3;
 	    }
-	    if (value = "buy18"){
+	    else if (value == "buy18"){
 		    cost += 3;
 	    }
-        if (value = "buy19"){
+        else if (value == "buy19"){
 		    cost += 3;
 	    }
-	    if (value = "buy20"){
+	    else if (value == "buy20"){
 		    cost += 3;
 	    }
 
@@ -89,7 +89,7 @@ function addToCart(value) {
             document.getElementById("discount").innerHTML = "No Discount Applied!";
             document.getElementById("discount").style.color = "black";
             document.getElementById("discount").style.fontWeight = "normal";
-         }
+        }
 
 	}else{
 		alert("Sorry, your browser does not support web storage...");
