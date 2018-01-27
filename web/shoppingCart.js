@@ -159,7 +159,7 @@ function loadCart(){
 		added.push(sessionStorage.getItem('buy20'));
 	}
 
-	text = "<ul>";
+	var text = "<ul>";
 	for (i = 0; i < added.length; i++) {
     	text += "<li>" + added[i] + "</li>";
 	}
