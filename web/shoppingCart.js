@@ -319,11 +319,21 @@ function confirm() {
 
 	var address = [];
 	address.push(sessionStorage.getItem('street'));
-	address.push(sessionStorage.getItem('apt'));
+	if(sessionStorage.getItem('apt') != null){
+		address.push(sessionStorage.getItem('apt'));
+	}
 	address.push(sessionStorage.getItem('city'));
 	address.push(sessionStorage.getItem('state'));
 	address.push(sessionStorage.getItem('zip'));
-	document.getElementById("shipped").innerHTML = 
-		address[0] + "<br>" + address[1] + "<br>" + address[2]
-		+ ", " + address[3] + " " + address[4];
+
+	if(address.length == 5){
+		document.getElementById("shipped").innerHTML = 
+			address[0] + "<br>" + address[1] + "<br>" + address[2]
+			+ ", " + address[3] + " " + address[4];
+	}
+	else{
+		document.getElementById("shipped").innerHTML = 
+			address[0] + "<br>"  + address[2]
+			+ ", " + address[3] + " " + address[4];
+	}
 }
