@@ -159,6 +159,5 @@ function loadCart(){
 		added.push(sessionStorage.getItem('buy20'));
 	}
 
-
 	document.getElementById("itemsInCart").innerHTML = added;
 }
