@@ -6,7 +6,7 @@ function addToCart(key, value) {
 		sessionStorage.setItem(key, value);
 		alert("Item added to cart");
 		count += 1;
-		added.push(value);
+		added.push(sessionStorage.getItem(key));
 
 	    if (key == "buy1"){
 			cost += 5;
