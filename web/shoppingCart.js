@@ -242,7 +242,7 @@ function remmoveCartItems() {
 		if(remove[i].checked && remove[i].value == "$3 Blue Hoop Earrings"){
 			sessionStorage.removeItem("buy20");
 		}
-
+		loadCart();
 	}
 }
 
@@ -325,7 +325,7 @@ function confirm() {
 	address.push(sessionStorage.getItem('city'));
 	address.push(sessionStorage.getItem('state'));
 	address.push(sessionStorage.getItem('zip'));
-	
+
 	document.getElementById("shipped").innerHTML = 
 		address[0] + "<br>" + address[1] + "<br>" + address[2]
 		+ ", " + address[3] + " " + address[4];
