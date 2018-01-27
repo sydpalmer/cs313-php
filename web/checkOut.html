@@ -37,15 +37,15 @@
             <form action="confirmationPage.html">
                <tr>
                   <td>Street:</td>
-                  <td><input type="text" name="street" required></td>
+                  <td><input type="text" name="street" id="street" required></td>
                </tr>
                <tr>
                   <td>Apartment #: </td>
-                  <td><input type="text" name="apt" size="4"></td>
+                  <td><input type="text" name="apt" id="apt" size="4"></td>
                </tr>
                <tr>
                   <td>City: </td>
-                  <td><input type="text" name="city" required></td>
+                  <td><input type="text" name="city" id="city" required></td>
                </tr>
                <tr>
                   <td>State: </td>
@@ -54,23 +54,31 @@
                <tr>
                   <td>ZIP code:</td>
                   <td>
-                     <input type="text" name="zip" size="5" maxlength="5" required>
+                     <input type="text" name="zip" id="zip" size="5" maxlength="5" required>
                   </td>
                </tr>
                <tr>
                   <td colspan="2">
                      <br>
                      <a href="viewCart.html">Return to Cart</a> &emsp;
-                     <input type="submit" name="submit" value="Purchase">
+                     <input type="submit" name="submit" onsubmit="saveValues();" value="Purchase">
                   </td>
                </tr>
             </form>
          </table>
       </div>
       <script type="text/javascript">
-         cap(){
+         function cap(){
             var x = document.getElementById("state");
             x.value = x.value.toUpperCase();
+         }
+
+         function saveValues(){
+            sessionStorage.setItem("street", document.getElementById('street').value);
+            sessionStorage.setItem("apt", document.getElementById('apt').value);
+            sessionStorage.setItem("city", document.getElementById('city').value);
+            sessionStorage.setItem("state", document.getElementById('state').value);
+            sessionStorage.setItem("zip", document.getElementById('zip').value)
          }
       </script>
 </body>
