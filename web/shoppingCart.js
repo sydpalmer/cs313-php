@@ -171,7 +171,7 @@ function loadCart(){
 }
 
 function makeCheckBoxes() {
-	var input;
+	var input = "Check which items you want to remove: ";
 	for (var i = 0; i < added.length;i++) {
 		input += "<input type='checkbox' name='remove' value='" + 
 		added[i] + "'> Item " + i + " ";
