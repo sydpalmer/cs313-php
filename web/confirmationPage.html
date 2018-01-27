@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang = "en" >
+<head>
+   <meta charset = "utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <link rel="stylesheet" type="text/css" href="shoppingCart.css">
+   <script type="text/javascript" src="shoppingCart.js"></script>
+   <title>Confirmation</title>
+</head>
+<body onload="confirm();">
+	<h1>Order Confirmation</h1>
+	<ul>
+         <li><a href="shoppingCart.html">Shop</a></li>
+         <li style = "float: right"><a href="contact.html">Contact Us</a></li>
+         <li style = "float: right"><a href="about.html">About Us</a></li>
+         <li class="dropdown" style="float: right;">
+            <a href="viewCart.html" class="dropbtn">
+               <img src="cart.jpg" width="40px" height="40px"></a>
+            <div class="dropdown-content">
+               <a href="checkOut.html">Check Out</a>
+            </div>
+         </li>
+     </ul>
+     <h2>Your Order:</h2>
+     <h3 id="purchasedItems"></h3>
+</body>
+</html>

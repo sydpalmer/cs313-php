@@ -247,3 +247,15 @@ function remmoveCartItems() {
 	added = [];
 	loadCart();
 }
+
+function confirm() {
+	var text, i, len;
+	len = added.length;
+	text = added[0];
+	for(i = 1; i < len; i++){
+		text += ", " + added[i];
+	}
+	text += "."
+
+	document.getElementById("purchasedItems").innerHTML = text;
+}
