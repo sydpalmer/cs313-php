@@ -312,9 +312,8 @@ function confirm() {
 	len = added.length;
 	text = "Purchased items:<br>" + added[0];
 	for(i = 1; i < len; i++){
-		text += ", " + added[i];
+		text += "<br>" + added[i];
 	}
-	text += "."
 
 	document.getElementById("purchasedItems").innerHTML = text;
 }
