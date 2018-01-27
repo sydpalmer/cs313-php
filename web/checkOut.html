@@ -61,7 +61,7 @@
                   <td colspan="2">
                      <br>
                      <a href="viewCart.html">Return to Cart</a> &emsp;
-                     <input type="submit" name="submit" onsubmit="saveValues();" value="Purchase">
+                     <input type="submit" name="submit" onclick="saveValues();" value="Purchase">
                   </td>
                </tr>
             </form>
@@ -74,11 +74,11 @@
          }
 
          function saveValues(){
-            sessionStorage.setItem("street", document.getElementById('street').value);
-            sessionStorage.setItem("apt", document.getElementById('apt').value);
-            sessionStorage.setItem("city", document.getElementById('city').value);
-            sessionStorage.setItem("state", document.getElementById('state').value);
-            sessionStorage.setItem("zip", document.getElementById('zip').value)
+            sessionStorage.setItem("street", document.getElementById("street").value);
+            sessionStorage.setItem("apt", document.getElementById("apt").value);
+            sessionStorage.setItem("city", document.getElementById("city").value);
+            sessionStorage.setItem("state", document.getElementById("state").value);
+            sessionStorage.setItem("zip", document.getElementById("zip").value)
          }
       </script>
 </body>
