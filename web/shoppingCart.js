@@ -1,11 +1,11 @@
 var count = 0;
+var cost = 0;
 function addToCart(value) {
 	if(typeof(Storage) !== "undefined") {
 		sessionStorage.setItem("cart", value);
 		alert("Item added to cart");
 		count += 1;
 
-		var cost = 0;
 	    if (value == "buy1"){
 			cost += 5;
 	     }
