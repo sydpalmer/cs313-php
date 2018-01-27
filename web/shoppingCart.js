@@ -76,11 +76,9 @@ function addToCart(key, value) {
         else if(count >=15){
             cost -= (cost * .15);
         }
-        sessionStorage.setItem("totalCost", cost);
-        var totalCost = parseInt(sessionStorage.getItem("totalCost"));
 	    document.getElementById('total').style.fontWeight = "bold";
         document.getElementById('total').style.fontSize = "30px";
-        document.getElementById('total').innerHTML = '$' + totalCost.toFixed(2);
+        document.getElementById('total').innerHTML = '$' + cost.toFixed(2);
 
         if(count >= 5){
             document.getElementById("discount").style.color = "green";
