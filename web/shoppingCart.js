@@ -159,5 +159,13 @@ function loadCart(){
 		added.push(sessionStorage.getItem('buy20'));
 	}
 
-	document.getElementById("itemsInCart").innerHTML = added;
+	var text, i, len;
+	len = added.length;
+	text = "<ol>"
+	for(i = 0; i < len; i++){
+		text += "<li>" + added[i] + "</li>";
+	}
+	text += "</ol>"
+
+	document.getElementById("itemsInCart").innerHTML = text;
 }
