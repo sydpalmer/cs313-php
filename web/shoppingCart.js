@@ -1,5 +1,6 @@
 var count = 0;
 var cost = 0;
+var added =[];
 function addToCart(key, value) {
 	if(typeof(Storage) !== "undefined") {
 		sessionStorage.setItem(key, value);
@@ -97,7 +98,6 @@ function addToCart(key, value) {
 }
 
 function loadCart(){
-	var added =[];
 	if(sessionStorage.getItem('buy1') != null){
 		added.push(sessionStorage.getItem('buy1'));
 	}
@@ -168,4 +168,13 @@ function loadCart(){
 	text += "</ol>"
 
 	document.getElementById("itemsInCart").innerHTML = text;
+}
+
+function makeCheckBoxes() {
+	var input;
+	for (var i = 0; i < added.length;i++) {
+		input += "<input type='checkbox' name='remove' value='" + 
+		added[i] + "'> Item " + i + " ";
+	}
+	document.getElementById("removeItems").innerHTML = input;
 }

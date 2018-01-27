@@ -17,7 +17,7 @@
    </style>
    <title>View Cart</title>
 </head>
-<body onload="loadCart();">
+<body onload="loadCart(); makeCheckBoxes();">
    <h1>View Cart</h1>
 	<ul>
          <li><a href="shoppingCart.html">Shop</a></li>
@@ -33,6 +33,11 @@
       </ul>
    <h3 style="text-align: left;">Items in your cart:</h3>
    <h4 id="itemsInCart"></h4>
+
+   <p id="removeItems"></p>
+   <p>
+      <input type="button" name="remove" value="Remove Checked Items">
+   </p>
 
    <p>
       <form align="left" action="checkOut.html">
