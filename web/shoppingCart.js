@@ -317,10 +317,13 @@ function confirm() {
 
 	document.getElementById("purchasedItems").innerHTML = text;
 
-	//document.getElementById("shipped").innerHTML = 
-		//sessionStorage.getItem('street') + "<br>" +
-		//sessionStorage.getItem('apt'). + "<br>" +
-		//sessionStorage.getItem('city') + ", " +
-		//sessionStorage.getItem('state') + " " +
-		//sessionStorage.getItem('zip');
+	var address = [];
+	address.push(sessionStorage.getItem('street'));
+	address.push(sessionStorage.getItem('apt'));
+	address.push(sessionStorage.getItem('city'));
+	address.push(sessionStorage.getItem('state'));
+	address.push(sessionStorage.getItem('zip'));
+	document.getElementById("shipped").innerHTML = 
+		address[0] + "<br>" + address[1] + "<br>" + address[2]
+		+ ", " + address[3] + " " + address[4];
 }
