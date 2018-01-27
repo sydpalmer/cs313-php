@@ -163,7 +163,7 @@ function loadCart(){
 	len = added.length;
 	text = "<ol>"
 	for(i = 0; i < len; i++){
-		text += "<li float='center;'>" + added[i] + "</li><br>";
+		text += "<li style='float: center;'>" + added[i] + "</li><br>";
 	}
 	text += "</ol>"
 
