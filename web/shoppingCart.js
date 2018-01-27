@@ -316,4 +316,11 @@ function confirm() {
 	}
 
 	document.getElementById("purchasedItems").innerHTML = text;
+
+	document.getElementById("shipped").innerHTML = 
+		document.getElementById("street").value + "<br>" +
+		document.getElementById("apt").value + "<br>" +
+		document.getElementById("city").value + ", " +
+		document.getElementById("state").value + " " +
+		document.getElementById("zip").value;
 }
