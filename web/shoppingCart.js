@@ -161,7 +161,7 @@ function loadCart(){
 
 	var text, i, len;
 	len = added.length;
-	text = "<ol align='center;'>"
+	text = "<ol>"
 	for(i = 0; i < len; i++){
 		text += "<li>" + added[i] + "</li><br>";
 	}
