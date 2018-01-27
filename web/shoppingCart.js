@@ -247,6 +247,67 @@ function remmoveCartItems() {
 }
 
 function confirm() {
+	if(sessionStorage.getItem('buy1') != null){
+		added.push(sessionStorage.getItem('buy1'));
+	}
+	if(sessionStorage.getItem('buy2') != null){
+		added.push(sessionStorage.getItem('buy2'));
+	}
+	if(sessionStorage.getItem('buy3') != null){
+		added.push(sessionStorage.getItem('buy3'));
+	}
+	if(sessionStorage.getItem('buy4') != null){
+		added.push(sessionStorage.getItem('buy4'));
+	}
+	if(sessionStorage.getItem('buy5') != null){
+		added.push(sessionStorage.getItem('buy5'));
+	}
+	if(sessionStorage.getItem('buy6') != null){
+		added.push(sessionStorage.getItem('buy6'));
+	}
+	if(sessionStorage.getItem('buy7') != null){
+		added.push(sessionStorage.getItem('buy7'));
+	}
+	if(sessionStorage.getItem('buy8') != null){
+		added.push(sessionStorage.getItem('buy8'));
+	}
+	if(sessionStorage.getItem('buy9') != null){
+		added.push(sessionStorage.getItem('buy9'));
+	}
+	if(sessionStorage.getItem('buy10') != null){
+		added.push(sessionStorage.getItem('buy10'));
+	}
+	if(sessionStorage.getItem('buy11') != null){
+		added.push(sessionStorage.getItem('buy11'));
+	}
+	if(sessionStorage.getItem('buy12') != null){
+		added.push(sessionStorage.getItem('buy12'));
+	}
+	if(sessionStorage.getItem('buy13') != null){
+		added.push(sessionStorage.getItem('buy13'));
+	}
+	if(sessionStorage.getItem('buy14') != null){
+		added.push(sessionStorage.getItem('buy14'));
+	}
+	if(sessionStorage.getItem('buy15') != null){
+		added.push(sessionStorage.getItem('buy15'));
+	}
+	if(sessionStorage.getItem('buy16') != null){
+		added.push(sessionStorage.getItem('buy16'));
+	}
+	if(sessionStorage.getItem('buy17') != null){
+		added.push(sessionStorage.getItem('buy17'));
+	}
+	if(sessionStorage.getItem('buy18') != null){
+		added.push(sessionStorage.getItem('buy18'));
+	}
+	if(sessionStorage.getItem('buy19') != null){
+		added.push(sessionStorage.getItem('buy19'));
+	}
+	if(sessionStorage.getItem('buy20')){
+		added.push(sessionStorage.getItem('buy20'));
+	}
+
 	var text, i, len;
 	len = added.length;
 	text = "Purchased items:<br>" + added[0];
