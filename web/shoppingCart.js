@@ -175,14 +175,16 @@ function makeCheckBoxes() {
 	
 	for (var i = 0; i < added.length;i++) {
 		input += "<input type='checkbox' name='remove[]' value='" + 
-		added[i] + "'> Item " + (i + 1) + " ";
+		added[i] + "' id='b" + i + "'> Item " + (i + 1) + " ";
 	}
 	document.getElementById("removeItems").innerHTML = input;
 }
 
 function remmoveCartItems() {
+
 	for (var i = 0; i < added.length; i++) {
-		if(remove[i].checked && remove[i].value == "$5 Black and Cream Bracelet"){
+		var remove = document.getElementById('b' + i);
+		if(remove.checked && remove.value == "$5 Black and Cream Bracelet"){
 			sessionStorage.removeItem("buy1");
 		}
 		else if(remove[i].checked && remove[i].value == "$5 Small Blue Bracelet"){
