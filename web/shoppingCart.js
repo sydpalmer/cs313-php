@@ -325,8 +325,8 @@ function confirm() {
 	address.push(sessionStorage.getItem('city'));
 	address.push(sessionStorage.getItem('state'));
 	address.push(sessionStorage.getItem('zip'));
-
-	document.getElementById("shipped").innerHTML += "<br>" 
+	
+	document.getElementById("shipped").innerHTML = 
 		address[0] + "<br>" + address[1] + "<br>" + address[2]
 		+ ", " + address[3] + " " + address[4];
 }
