@@ -160,12 +160,12 @@ function loadCart(){
 	}
 
 	var text, i len;
-	text = "<ol>";
+	text = "<ul>";
 	len = added.length;
 	for (i = 0; i < len; i++) {
     	text += "<li>" + added[i] + "</li>";
 	}
-	text += "</ol>";
+	text += "</ul>";
 
 	document.getElementById("itemsInCart").innerHTML = text;
 }
