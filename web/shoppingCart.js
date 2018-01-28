@@ -183,7 +183,6 @@ function makeCheckBoxes() {
 function remmoveCartItems() {
 
 	for (var i = 0; i < added.length; i++) {
-		var remove = document.getElementById('b' + i);
 		if(remove.checked && remove.value == "$5 Black and Cream Bracelet"){
 			sessionStorage.removeItem("buy1");
 		}
