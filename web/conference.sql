@@ -36,3 +36,25 @@ CREATE TABLE notes (
 	session_id INTEGER REFERENCES sessions(session_id),
 	talk_id INTEGER REFERENCES talks(talk_id)
 );
+
+INSERT INTO speakers (name) VALUES 
+	('Dalin H. Oaks'), 
+	('Jeffery R. Holland'), 
+	('D. Todd Christofferson');
+
+INSERT INTO talks (speaker_id, talk_title) VALUES 
+	(1, 'The Plan and the Proclamation'), 
+	(2, 'Be Ye Therefor Perfect - Eventually'), 
+	(3, 'The Living Bread, Which Came Down From Heaven');
+
+INSERT INTO conferences (month_year) VALUES ('October - 2017');
+
+INSERT INTO sessions (session_name, conference_id) VALUES 
+	('Saturday Morning', 1);
+
+INSERT INTO users (name) VALUES ('Me');
+
+INSERT INTO notes (note, user_id, conference_id, speaker_id, session_id, talk_id) values 
+	('Insightful thoughts', 1, 1, 1, 1, 1), 
+	('Insightful thoughts', 1, 1, 2, 1, 2), 
+	('Insightful thoughts', 1, 1, 3, 1, 3);
