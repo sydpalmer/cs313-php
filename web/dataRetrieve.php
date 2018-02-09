@@ -53,6 +53,7 @@
         $user = 'postgres';
         $password = 'postgres';
         $dbconn = pg_connect("dbname=log");
+echo "<tr><td>Connected!</td></tr>"
       if(! $dbconn){
         echo 'Error!: ' . $ex->getMessage();
         die();
