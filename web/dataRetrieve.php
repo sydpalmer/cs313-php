@@ -49,14 +49,11 @@
       <th>Product</th>
     </tr>
     <?php
-      try
-      {
+      
         $user = 'postgres';
         $password = 'postgres';
         $dbconn = pg_connect("dbname=log");
-      }
-      catch (PDOException $ex)
-      {
+      if(! $dbconn){
         echo 'Error!: ' . $ex->getMessage();
         die();
       }
