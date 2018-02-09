@@ -53,7 +53,7 @@
       if(isset($_GET['allEntries'])){
         $dbconn = pg_connect("host=localhost port=5432 dbname=log");
         if(! $dbconn){
-          echo "Error!: ";
+          echo "Error!: " . pg_error();
           die();
         }
 echo "<tr><td>Connected!</td></tr>";
