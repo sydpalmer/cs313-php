@@ -84,13 +84,13 @@ echo "got result. Here's query: " . $whole_sql;
           echo "<td>$prod</td>";
           echo "</tr>";
         }
-echo "Just finished the while loop."
+echo "Just finished the while loop.";
       } else if (isset($_GET['submit'])){
 
         //Get input
         $input = $_GET['input'];
         $col = $_GET['option'];
-echo "Got input and the column."
+echo "Got input and the column.";
 
         //Get the row that's associated with the manifest number
         $sql = "SELECT * FROM shipping WHERE $col = '$input'";
@@ -118,7 +118,7 @@ echo "Got result. Query: " . $sql;
           echo "<td>$prod</td>";
           echo "</tr>";
         }
-echo "Finished the while loop"
+echo "Finished the while loop";
       }
 
     ?>
