@@ -61,7 +61,7 @@
       if(isset($_GET['allEntries'])){
         $whole_sql = "SELECT * FROM shipping";
         $whole_result = pg_query($dbconn, $whole_sql);
-echo "got result. Here's query: " . $whole_sql;
+echo "<tr><td>got result. Here's query: " . $whole_sql . "</td></tr>";
         if (!$whole_result) {
           die ('Could not run query');
         }
@@ -84,18 +84,18 @@ echo "got result. Here's query: " . $whole_sql;
           echo "<td>$prod</td>";
           echo "</tr>";
         }
-echo "Just finished the while loop.";
+echo "<tr><td>Just finished the while loop.</td></tr>";
       } else if (isset($_GET['submit'])){
 
         //Get input
         $input = $_GET['input'];
         $col = $_GET['option'];
-echo "Got input and the column.";
+echo "<tr><td>Got input and the column.</td></tr>";
 
         //Get the row that's associated with the manifest number
         $sql = "SELECT * FROM shipping WHERE $col = '$input'";
         $result = pg_query($sql);
-echo "Got result. Query: " . $sql;
+echo "<tr><td>Got result. Query: " . $sql . "</td></tr>";
         if (!$result) {
           die ('Could not run query');
         }
@@ -118,7 +118,7 @@ echo "Got result. Query: " . $sql;
           echo "<td>$prod</td>";
           echo "</tr>";
         }
-echo "Finished the while loop";
+echo "<tr><td>Finished the while loop</td></tr>";
       }
 
     ?>
