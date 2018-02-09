@@ -60,12 +60,12 @@
 
       if(isset($_GET['allEntries'])){
         $whole_sql = "SELECT * FROM LOG.SHIPPING";
-        $whole_result = mysqli_query($whole_sql);
+        $whole_result = pg_query($dbconn, $whole_sql);
         if (!$whole_result) {
-          die ('Could not run query: ' . mysqli_error());
+          die ('Could not run query');
         }
 
-        while($whole_row = mysqli_fetch_array($whole_result)){
+        while($whole_row = pg_fetch_array($whole_result)){
           if ($whole_row[6] == '1'){
             $prod = 'bracelet';
           } else if ($whole_row[6] == '2'){
@@ -91,13 +91,13 @@
 
         //Get the row that's associated with the manifest number
         $sql = "SELECT * FROM LOG.SHIPPING WHERE $col = '$input'";
-        $result = mysqli_query($sql);
+        $result = pg_query($sql);
 
         if (!$result) {
-          die ('Could not run query: ' . mysqli_error());
+          die ('Could not run query');
         }
 
-        while($row = mysqli_fetch_array($result)){
+        while($row = pg_fetch_array($result)){
           if ($row[6] == '1'){
             $prod = 'bracelet';
           } else if ($row[6] == '2'){
