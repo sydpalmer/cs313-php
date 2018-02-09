@@ -51,7 +51,12 @@
     <?php
 
       if(isset($_GET['allEntries'])){
-        $dbconn = pg_connect("host=12.0.0.1 port=5432 dbname=log user=postgres password=postgres");
+        $dbconn = (function(){
+          $parts = parse_url(getenv'DATABASE_URL') ?: 'postgres://ntyfmovmsnckky:6be3475fdb9f62866f0c4bf41ceeaf080ff8ae77a9295277082f76dbd7ceb696@ec2-54-235-249-33.compute-1.amazonaws.com:5432/dflvesdjudfd7e'
+          extract($parts);
+          $path = ltrim($path, "/");
+          return new PDO("pgsql:host={$host};port={$port};dbname={$path}", 'postgres', 'postgres');
+        })();
         if(! $dbconn){
           echo "Error!: ";
           die();
