@@ -17,9 +17,9 @@
 <body>
 
   <table align="center">
+    <form>
     <tr style="text-align: center;">
       <td colspan="10" style="padding:8px; font-size:125%">
-	<form>
 	  Search by: <select name="option">
 	    <option value="id">ID</option>
   	  <option value="driver_initials">Driver's Initials</option>
@@ -36,9 +36,9 @@
     <tr style="text-align: center;">
       <td colspan="10" style="padding:8px; font-size:125%">
 	<input type="submit" value="Get All Entries" name="allEntries"/>
-        </form>
       </td>
     </tr>
+    </form>
     <tr style="text-align: center;">
       <th>ID</th>
       <th>Driver's Initials</th>
@@ -49,9 +49,7 @@
       <th>Product</th>
     </tr>
     <?php
-      
-        $user = 'postgres';
-        $password = 'postgres';
+
         $dbconn = pg_connect("dbname=log");
 echo "<tr><td>Connected!</td></tr>";
       if(! $dbconn){
