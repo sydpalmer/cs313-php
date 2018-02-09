@@ -51,12 +51,12 @@
     <?php
 
       if(isset($_GET['allEntries'])){
-        $dbconn = pg_connect("dbname=log");
-echo "<tr><td>Connected!</td></tr>";
+        $dbconn = pg_connect("host=12.0.0.1 port=5432 dbname=log user=postgres password=postgres");
         if(! $dbconn){
           echo "Error!: ";
           die();
         }
+echo "<tr><td>Connected!</td></tr>";
 
         $whole_sql = "SELECT * FROM shipping";
 echo "<tr><td>SQL command was created</td></tr>";
@@ -86,7 +86,7 @@ echo "<tr><td>got result. Here's query: " . $whole_sql . "</td></tr>";
         }
 echo "<tr><td>Just finished the while loop.</td></tr>";
       } else if (isset($_GET['submit'])){
-        $dbconn = pg_connect("dbname=log");
+        $dbconn = pg_connect("host=12.0.0.1 port=5432 dbname=log user=postgres password=postgres");
 echo "<tr><td>Connected!</td></tr>";
         if(! $dbconn){
           echo 'Error!: ' . $ex->getMessage();
