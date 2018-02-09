@@ -50,14 +50,14 @@
     </tr>
     <?php
 
+      if(isset($_GET['allEntries'])){
         $dbconn = pg_connect("dbname=log");
 echo "<tr><td>Connected!</td></tr>";
-      if(! $dbconn){
-        echo 'Error!: ' . $ex->getMessage();
-        die();
-      }
+        if(! $dbconn){
+          echo 'Error!: ' . $ex->getMessage();
+          die();
+        }
 
-      if(isset($_GET['allEntries'])){
 echo "<tr><td>All Entries was pushed!</td></tr>";
         $whole_sql = "SELECT * FROM shipping";
 echo "<tr><td>SQL command was created</td></tr>";
@@ -87,6 +87,13 @@ echo "<tr><td>got result. Here's query: " . $whole_sql . "</td></tr>";
         }
 echo "<tr><td>Just finished the while loop.</td></tr>";
       } else if (isset($_GET['submit'])){
+        $dbconn = pg_connect("dbname=log");
+echo "<tr><td>Connected!</td></tr>";
+        if(! $dbconn){
+          echo 'Error!: ' . $ex->getMessage();
+          die();
+        }
+
 echo "<tr><td>Submit was pushed!</td></tr>";
         //Get input
         $input = $_GET['input'];
