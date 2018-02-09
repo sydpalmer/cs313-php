@@ -54,11 +54,10 @@
         $dbconn = pg_connect("dbname=log");
 echo "<tr><td>Connected!</td></tr>";
         if(! $dbconn){
-          echo 'Error!: ' . $ex->getMessage();
+          echo "Error!: ";
           die();
         }
 
-echo "<tr><td>All Entries was pushed!</td></tr>";
         $whole_sql = "SELECT * FROM shipping";
 echo "<tr><td>SQL command was created</td></tr>";
         $whole_result = pg_query($dbconn, $whole_sql);
