@@ -51,7 +51,7 @@
     <?php
 
       if(isset($_GET['allEntries'])){
-        $dbconn = pg_connect("host=127.0.0.1/32 port=5432 dbname=log");
+        $dbconn = pg_connect("host=127.0.0.1/32 port=5432 dbname=log user=postgres password=postgres");
         if(! $dbconn){
           echo "Error!";
           die();
