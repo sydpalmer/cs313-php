@@ -59,7 +59,7 @@
       }
 
       if(isset($_GET['allEntries'])){
-        $whole_sql = "SELECT * FROM LOG.SHIPPING";
+        $whole_sql = "SELECT * FROM shipping";
         $whole_result = pg_query($dbconn, $whole_sql);
         if (!$whole_result) {
           die ('Could not run query');
@@ -90,7 +90,7 @@
         $col = $_GET['option'];
 
         //Get the row that's associated with the manifest number
-        $sql = "SELECT * FROM LOG.SHIPPING WHERE $col = '$input'";
+        $sql = "SELECT * FROM shipping WHERE $col = '$input'";
         $result = pg_query($sql);
 
         if (!$result) {
