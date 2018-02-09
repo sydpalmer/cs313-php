@@ -53,7 +53,7 @@
       {
         $user = 'postgres';
         $password = 'postgres';
-        $db = new PDO('pgsql:host=127.0.0.1;dbname=log', $user, $password);
+        $dbconn = pg_connect("dbname=log");
       }
       catch (PDOException $ex)
       {
@@ -115,7 +115,7 @@
           echo "<td>$row[3]</td>";
           echo "<td>$row[4]</td>";
           echo "<td>$row[5] &deg;F</td>";
-          echo "<td>$row[6]</td>";
+          echo "<td>$prod</td>";
           echo "</tr>";
         }
       }
