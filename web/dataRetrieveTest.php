@@ -96,11 +96,6 @@
         //Get input
         $input = $_GET['input'];
         $col = $_GET['option'];
-echo "<tr><td>Input: $input</td></tr>";
-echo "<tr><td>Col: $col</td></tr>";
-
-        //Get the row that's associated with the manifest number
-        $sql = "SELECT * FROM shipping WHERE $col = '$input'";
         
         foreach ($db->query("SELECT * FROM shipping WHERE $col = '$input'") as $row){
           if ($row[6] == '1'){
