@@ -55,7 +55,7 @@
         {
           $user = 'postgres';
           $password = 'postgres';
-          $db = new PDO('pgsql:host=127.0.0.1;dbname=postgres', $user, $password);
+          $db = new PDO('pgsql:host=127.0.0.1;dbname=log', $user, $password);
         }
         catch (PDOException $ex)
         {
