@@ -96,13 +96,19 @@ echo "<tr><td>got result. Here's query: " . $whole_sql . "</td></tr>";
 echo "<tr><td>Just finished the while loop.</td></tr>";
 
       } else if (isset($_GET['submit'])){
-        $$dbconn = pg_connect("host=localhost port=5432 dbname=log");
-        if(! $dbconn){
-          echo "Error!";
+        try
+        {
+          $user = 'postgres';
+          $password = 'postgres';
+          $db = new PDO('pgsql:host=localhost;dbname=log', $user, $password);
+        }
+        catch (PDOException $ex)
+        {
+          echo 'Error!: ' . $ex->getMessage();
           die();
         }
-
 echo "<tr><td>Submit was pushed!</td></tr>";
+
         //Get input
         $input = $_GET['input'];
         $col = $_GET['option'];
@@ -110,13 +116,13 @@ echo "<tr><td>Got input and the column.</td></tr>";
 
         //Get the row that's associated with the manifest number
         $sql = "SELECT * FROM shipping WHERE $col = '$input'";
-        $result = pg_query($sql);
-echo "<tr><td>Got result. Query: " . $sql . "</td></tr>";
+        $result = $db->query($sql);
         if (!$result) {
           die ('Could not run query');
         }
+echo "<tr><td>Got result. Query: " . $sql . "</td></tr>";
 
-        while($row = pg_fetch_array($result)){
+        while($row = $result->fetch_array(PDO::FETCH_ASSOC)){
           if ($row[6] == '1'){
             $prod = 'bracelet';
           } else if ($row[6] == '2'){
