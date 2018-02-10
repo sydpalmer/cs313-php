@@ -51,23 +51,31 @@
     <?php
 
       if(isset($_GET['allEntries'])){
-        $dbconn = pg_connect("host=localhost port=5432 dbname=postgres user='-U postgres' password=postgres");
-        if(! $dbconn){
-          $error = error_get_last();
-          echo "Error!" . $error['message'];
+        try
+        {
+          $user = 'postgres';
+          $password = 'postgres';
+          $db = new PDO('pgsql:host=127.0.0.1;dbname=postgres', $user, $password);
+        }
+        catch (PDOException $ex)
+        {
+          echo 'Error!: ' . $ex->getMessage();
           die();
         }
 echo "<tr><td>Connected!</td></tr>";
 
+        $db->query('\c log');
+
         $whole_sql = "SELECT * FROM shipping";
 echo "<tr><td>SQL command was created</td></tr>";
-        $whole_result = pg_query($dbconn, $whole_sql);
-echo "<tr><td>got result. Here's query: " . $whole_sql . "</td></tr>";
+
+        $whole_result = $db->query($whole_sql);
         if (!$whole_result) {
           die ('Could not run query');
         }
+echo "<tr><td>got result. Here's query: " . $whole_sql . "</td></tr>";
 
-        while($whole_row = pg_fetch_array($whole_result)){
+        while($whole_row = $whole_result->fetch_array(PDO::FETCH_ASSOC)){
           if ($whole_row[6] == '1'){
             $prod = 'bracelet';
           } else if ($whole_row[6] == '2'){
@@ -86,6 +94,7 @@ echo "<tr><td>got result. Here's query: " . $whole_sql . "</td></tr>";
           echo "</tr>";
         }
 echo "<tr><td>Just finished the while loop.</td></tr>";
+
       } else if (isset($_GET['submit'])){
         $$dbconn = pg_connect("host=localhost port=5432 dbname=log");
         if(! $dbconn){
