@@ -23,7 +23,7 @@
 
       $dbopts = parse_url($dbUrl);
 
-      print "<p>$dbUrl</p>\n\n";
+      print "<p>Database URL: $dbUrl</p>\n\n";
 
       $dbHost = $dbopts["host"];
       $dbPort = $dbopts["port"];
@@ -43,7 +43,7 @@
 
       foreach ($db->query('SELECT now()') as $row)
       {
-        print "<p>$row[0]</p>\n\n";
+        print "<p>Printing rows: $row[0]</p>\n\n";
       }
 
 ?>
