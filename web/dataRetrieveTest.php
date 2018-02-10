@@ -100,7 +100,7 @@
         //Get the row that's associated with the manifest number
         $sql = "SELECT * FROM shipping WHERE $col = '$input'";
         
-        foreach ($db->query($sql) as $row){
+        foreach ($db->query('SELECT * FROM shipping WHERE $col = $input') as $row){
           if ($row[6] == '1'){
             $prod = 'bracelet';
           } else if ($row[6] == '2'){
