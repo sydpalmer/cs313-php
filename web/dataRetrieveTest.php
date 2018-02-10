@@ -99,11 +99,11 @@
 
         if($col == 'product'){
           if($input == 'bracelet'){
-            $input = 1;
+            $input = '1';
           }else if($input == 'necklace'){
-            $input = 2;
+            $input = '2';
           }else if($input = 'earring'){
-            $input = 3;
+            $input = '3';
           }
         }
         
