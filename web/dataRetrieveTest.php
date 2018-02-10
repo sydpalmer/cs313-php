@@ -92,6 +92,36 @@
           echo "</tr>";
         }
 
+      } else if (isset($_GET['submit'])){
+        //Get input
+        $input = $_GET['input'];
+        $col = $_GET['option'];
+
+        //Get the row that's associated with the manifest number
+        $sql = "SELECT * FROM shipping WHERE $col = '$input'";
+        $result = $db->query($sql);
+        if (!$result) {
+          die ('Could not run query');
+        }
+
+        while($row = $result->fetch_array(PDO::FETCH_ASSOC)){
+          if ($row[6] == '1'){
+            $prod = 'bracelet';
+          } else if ($row[6] == '2'){
+            $prod = 'necklace';
+          } else{
+            $prod = 'earring';
+          }
+          echo "<tr style='text-align: center;'>";
+          echo "<td>$row[0]</td>";
+          echo "<td>$row[1]</td>";
+          echo "<td>$row[2]</td>";
+          echo "<td>$row[3]</td>";
+          echo "<td>$row[4]</td>";
+          echo "<td>$row[5] &deg;F</td>";
+          echo "<td>$prod</td>";
+          echo "</tr>";
+        }
       }
 ?>
 </table>
