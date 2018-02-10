@@ -53,7 +53,7 @@
       if(isset($_GET['allEntries'])){
         try
         {
-          $user = 'postgres';
+          $user = '-U postgres';
           $password = 'postgres';
           $db = new PDO('pgsql:host=127.0.0.1;dbname=log', $user, $password);
         }
