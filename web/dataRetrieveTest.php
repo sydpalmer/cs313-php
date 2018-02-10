@@ -22,7 +22,7 @@
       <td colspan="10" style="padding:8px; font-size:125%">
     Search by: <select name="option">
       <option value="id">ID</option>
-      <option value="driver_initials">Driver's Initials</option>
+      <option value="trucker_initials">Driver's Initials</option>
       <option value="tractor_number">Tractor Number</option>
       <option value="trailer_number">Trailer Number</option>
       <option value="month_year">Date</option>
@@ -96,6 +96,16 @@
         //Get input
         $input = $_GET['input'];
         $col = $_GET['option'];
+
+        if($col == 'product'){
+          if($input == 'bracelet'){
+            $input = 1;
+          }else if($input == 'necklace'){
+            $input = 2;
+          }else if($input = 'earring'){
+            $input = 3;
+          }
+        }
         
         foreach ($db->query("SELECT * FROM shipping WHERE $col = '$input'") as $row){
           if ($row[6] == '1'){
