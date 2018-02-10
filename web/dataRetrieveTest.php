@@ -41,7 +41,7 @@
         die();
       }
 
-      foreach ($db->query('SELECT now()') as $row)
+      foreach ($db->query('SELECT * FROM shipping') as $row)
       {
         print "<p>Printing rows: $row[0]</p>\n\n";
       }
