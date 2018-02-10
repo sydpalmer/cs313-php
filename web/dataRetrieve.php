@@ -53,9 +53,9 @@
       if(isset($_GET['allEntries'])){
         try
         {
-          $user = '-U postgres';
+          $user = 'postgres';
           $password = 'postgres';
-          $db = new PDO('pgsql:host=127.0.0.1;dbname=log', $user, $password);
+          $db = new PDO('pgsql:host=localhost;dbname=log', $user, $password);
         }
         catch (PDOException $ex)
         {
