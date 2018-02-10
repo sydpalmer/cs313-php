@@ -99,12 +99,8 @@
 
         //Get the row that's associated with the manifest number
         $sql = "SELECT * FROM shipping WHERE $col = '$input'";
-        $result = $db->query($sql);
-        if (!$result) {
-          die ('Could not run query');
-        }
-
-        while($row = $result->fetch_array(PDO::FETCH_ASSOC)){
+        
+        foreach ($db->query($sql) as $row){
           if ($row[6] == '1'){
             $prod = 'bracelet';
           } else if ($row[6] == '2'){
