@@ -16,6 +16,39 @@
 </head>
 <body>
 
+  <table align="center">
+    <form>
+    <tr style="text-align: center;">
+      <td colspan="10" style="padding:8px; font-size:125%">
+    Search by: <select name="option">
+      <option value="id">ID</option>
+      <option value="driver_initials">Driver's Initials</option>
+      <option value="tractor_number">Tractor Number</option>
+      <option value="trailer_number">Trailer Number</option>
+      <option value="month_year">Date</option>
+      <option value="temperature">Temperature</option>
+      <option value="product_id">Product</option>
+    </select>&emsp;
+    Input what to search for: <input type="text" name="input" id="input" size="18" autofocus>
+    <input type="submit" value="Submit" name="submit"/>
+      </td>
+    </tr>
+    <tr style="text-align: center;">
+      <td colspan="10" style="padding:8px; font-size:125%">
+  <input type="submit" value="Get All Entries" name="allEntries"/>
+      </td>
+    </tr>
+    </form>
+    <tr style="text-align: center;">
+      <th>ID</th>
+      <th>Driver's Initials</th>
+      <th>Tractor Number</th>
+      <th>Trailer Number</th>
+      <th>Date</th>
+      <th>Temperature</th>
+      <th>Product</th>
+    </tr>
+
     <?php
 
       // default Heroku Postgres configuration URL
@@ -23,15 +56,11 @@
 
       $dbopts = parse_url($dbUrl);
 
-      print "<p>Database URL: $dbUrl</p>\n\n";
-
       $dbHost = $dbopts["host"];
       $dbPort = $dbopts["port"];
       $dbUser = $dbopts["user"];
       $dbPassword = $dbopts["pass"];
       $dbName = ltrim($dbopts["path"],'/');
-
-      print "<p>pgsql:host=$dbHost;port=$dbPort;dbname=$dbName</p>\n\n";
 
       try {
         $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
@@ -41,11 +70,30 @@
         die();
       }
 
-      foreach ($db->query('SELECT * FROM shipping') as $row)
-      {
-        print "<p>Printing rows: $row[1]</p>\n\n";
-      }
+      if(isset($_GET['allEntries'])){
 
+        foreach ($db->query('SELECT * FROM shipping') as $whole_row)
+        {
+          if ($whole_row[6] == '1'){
+            $prod = 'bracelet';
+          } else if ($whole_row[6] == '2'){
+            $prod = 'necklace';
+          } else{
+            $prod = 'earring';
+          }
+          echo "<tr style='text-align: center;'>";
+          echo "<td>$whole_row[0]</td>";
+          echo "<td>$whole_row[1]</td>";
+          echo "<td>$whole_row[2]</td>";
+          echo "<td>$whole_row[3]</td>";
+          echo "<td>$whole_row[4]</td>";
+          echo "<td>$whole_row[5] &deg;F</td>";
+          echo "<td>$prod</td>";
+          echo "</tr>";
+        }
+
+      }
 ?>
+</table>
 </body>
 </html>
