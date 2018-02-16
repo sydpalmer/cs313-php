@@ -21,7 +21,6 @@
     <tr style="text-align: center;">
       <td colspan="10" style="padding:8px; font-size:125%">
     Search by: <select name="option">
-      <option value="id">ID</option>
       <option value="trucker_initials">Driver's Initials</option>
       <option value="tractor_number">Tractor Number</option>
       <option value="trailer_number">Trailer Number</option>
@@ -95,7 +94,7 @@
         $input = $_GET['input'];
         $col = $_GET['option'];
 
-        if($col == 'product'){
+        if($col == 'product_id'){
           if($input == 'bracelet'){
             $input = '1';
           }else if($input == 'necklace'){
