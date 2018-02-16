@@ -40,7 +40,6 @@
     </tr>
     </form>
     <tr style="text-align: center;">
-      <th>ID</th>
       <th>Driver's Initials</th>
       <th>Tractor Number</th>
       <th>Trailer Number</th>
@@ -82,7 +81,6 @@
             $prod = 'earring';
           }
           echo "<tr style='text-align: center;'>";
-          echo "<td>$whole_row[0]</td>";
           echo "<td>$whole_row[1]</td>";
           echo "<td>$whole_row[2]</td>";
           echo "<td>$whole_row[3]</td>";
