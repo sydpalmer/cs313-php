@@ -38,7 +38,7 @@
   $sql = "INSERT INTO shipping (trucker_initials, tractor_number, trailer_number, month_year, temperature, product_id) 
   VALUES('$initials', '$tractor_number', '$trailer_number', '$month_year', '$temperature', '$product')";
 
-$result = pg_query($sql);
+$result = $db->query($sql);
 
 echo "Entered data successfully\n";
 
