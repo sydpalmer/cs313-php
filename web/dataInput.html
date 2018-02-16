@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">       
+  <title>Driving Log</title>
+  <style>
+  th{
+    font-size: 35px;
+    border-bottom: 5px solid black;
+    border-bottom-style: double;
+  }
+  td:nth-child(1){
+    font-size: 25px;
+    text-align: right;
+  }
+  input{
+    height: 25px;
+    font-size: 25px;
+  }
+  button {
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.19);
+  }
+  </style>
+  <script>
+    //Function to check if date entered is the same as current date
+    function checkDate(otherDate){
+      //get today's date in string
+      var todayDate = new Date();
+      //need to add one to get current month as it is start with 0
+      var todayMonth = todayDate.getMonth() + 1;
+      var todayDay = todayDate.getDate();
+      var todayYear = todayDate.getFullYear();
+      //If the month is < 10, add a 0 (so date can be 01-??-???? instead of 1-??-????)
+      if(todayMonth < 10){
+        todayMonth = "0" + todayMonth.toString();
+      }
+      if(todayDay < 10){
+	     todayDay = "0" + todayDay.toString();
+      }
+      //Put the string together in the format that it needs to be
+      var todayDateText = todayYear + "-" + todayMonth + "-" + todayDay;
+      //If the date entered doesn't match current date, send alert.
+      if(otherDate != todayDateText){
+        alert("Invalid date: " + otherDate + " is not today's date: " + todayDateText);
+      }
+      else{
+        document.getElementById("hr").focus();
+      }
+    }
+
+    function checkNum(field, min, max){
+      if(field.value > parseInt(max) || field.value < parseInt(min)){
+        document.getElementById(field.id).style.backgroundColor = "red";
+	      document.getElementById("error").innerHTML += "*Error: check number length<br>";
+      }
+      else{
+	     document.getElementById(field.id).style.backgroundColor = "white";
+	     document.getElementById("error").innerHTML = document.getElementById("error").innerHTML.replace("*Error: check number length<br>", "");
+      }
+    }
+    //Function to make cursor move to next input field (if type text)
+    function moveOnLen(field, nextFieldID){
+      if(field.value.length >= field.maxLength){
+        document.getElementById(nextFieldID).focus();
+      }
+    }
+    //Function to make cursor move to next input field (if type number)
+    function moveOnNum(field, nextFieldID, min, max){
+      if(field.value > min && field.value < max){
+        document.getElementById(nextFieldID).focus();
+      }
+    }
+    //Function for when Reset button is clicked; 
+    //puts focus on manifest input field, erases all errors, changes any red boxes to white
+    function res(){
+      document.getElementById("dr").focus();
+      document.getElementById("error").innerHTML = "";
+      document.getElementById("tracNum").style.backgroundColor = "white";
+      document.getElementById("trailNum").style.backgroundColor = "white";
+      document.getElementById("temp").style.backgroundColor = "white";
+    }
+    //Function to check if user can submit; produces error if cannot
+    function canSubmit(){
+      if(document.getElementById("tracNum").style.backgroundColor == "red" ||
+	 document.getElementById("trailNum").style.backgroundColor == "red" ||
+	 document.getElementById("temp").style.backgroundColor == "red"){
+        document.getElementById("canEnter").innerHTML = "CANNOT SUBMIT! Check form";
+        return false;
+      }
+      else{
+        return true;
+      }
+    }
+  </script>
+</head>
+<body>
+  <p id="error" style="color:red"></p>
+  <p id="canEnter" style="color:red; font-weight:bold;"></p>
+
+  <form method="post" action="dataInput.php" onsubmit="return canSubmit();">
+  <table style="border: 5px solid black;" align="center" 
+   cellpadding="5" bgcolor="#d3d3d3">
+    <tr>
+      <th colspan="2">Input Information</th>
+    </tr>
+    <tr>
+      <td>Driver's Initials:</td>
+	    <td>
+        <input type="text" id="dr" name="driverInitial" maxlength="2" 
+           size="1" onblur="cap();" onKeyUp="moveOnLen(this,'tracNum');" required>
+	    </td>
+    </tr>
+    <tr>
+	   <td>Tractor Number:</td>
+	   <td>
+	     <input type="number" id="tracNum" name="tractorNum" style="width: 4em" 
+           min="0" max="9999" onChange="moveOnNum(this, 'trailNum', min, max); checkNum(this, min, max);"required>
+	   </td>
+    </tr>
+    <tr>
+      <td>Trailer Number:</td>
+	    <td>
+	     <input type="number" id="trailNum" name="trailerNum" style="width: 4em" 
+           min="0" max="99999" onChange="moveOnNum(this, 'pickUpDate', min, max); checkNum(this, min, max);"required>
+	    </td>
+    </tr>
+    <tr>
+	   <td>Pick-up Date:</td>
+	   <td>
+	     <input type="date" id="pickUpDate" name="pickupDate" 
+           onchange="checkDate(this.value); "required>
+	   </td>
+   </tr>
+   <tr>
+	   <td>Temperature:</td>
+	   <td style="font-size: 30px;">
+	     <input type="number" id= "temp" name="temp" style="width: 3em" min= "-50" max="99" onchange="checkNum(this, min, max);"required> °F
+	   </td>
+   </tr>
+   <tr>
+     <td>Product:</td>
+     <td style="font-size: 30px;">
+       <input type="number" id= "product" name="product" style="width: 3em" min= "1" max="3" onchange="checkNum(this, min, max);"required>
+     </td>
+   </tr>
+   <tr>
+	   <td colspan="2" style="text-align: center">
+	     <button type="submit" value="Submit"><b>Submit</b></button>
+	     <button type="reset" value="Reset" 
+           onclick="res();">Reset</button>
+      </td>
+    </tr>
+  </table>
+  </form>
+  <script>
+    //Function to capitalize initials
+    function cap(){
+         var x = document.getElementById("dr");
+         x.value = x.value.toUpperCase();
+       }
+  </script>
+</body>
+</html>
