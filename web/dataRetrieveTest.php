@@ -113,7 +113,6 @@
             $prod = 'earring';
           }
           echo "<tr style='text-align: center;'>";
-          echo "<td>$row[0]</td>";
           echo "<td>$row[1]</td>";
           echo "<td>$row[2]</td>";
           echo "<td>$row[3]</td>";
