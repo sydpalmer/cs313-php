@@ -35,7 +35,7 @@
   }
 
   //Insert into the table in the database
-  $sql = "INSERT INTO LOG.SHIPPING (trucker_initials, tractor_number, trailer_number, month_year, temperature, product_id) 
+  $sql = "INSERT INTO shipping (trucker_initials, tractor_number, trailer_number, month_year, temperature, product_id) 
   VALUES('$initials', '$tractor_number', '$trailer_number', '$month_year', '$temperature', '$product')";
 
 $result = pg_query($sql);
