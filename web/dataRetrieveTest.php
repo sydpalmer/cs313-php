@@ -99,7 +99,7 @@
           }
         }
         
-        foreach ($db->query("SELECT * FROM shipping WHERE $col = '(string)$input'") as $row){
+        foreach ($db->query("SELECT * FROM shipping WHERE $col = '$input'") as $row){
           if ($row[4] == '1'){
             $prod = 'bracelet';
           } else if ($row[4] == '2'){
