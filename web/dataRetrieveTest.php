@@ -96,16 +96,10 @@
             $input = '2';
           }else if($input = 'earring'){
             $input = '3';
-          }else if($input == 1){
-            $input = '1';
-          }else if($input == 2){
-            $input = '2';
-          }else if($input == 3){
-            $input = '3';
           }
         }
         
-        foreach ($db->query("SELECT * FROM shipping WHERE $col = '$input'") as $row){
+        foreach ($db->query("SELECT * FROM shipping WHERE $col = '(string)$input'") as $row){
           if ($row[4] == '1'){
             $prod = 'bracelet';
           } else if ($row[4] == '2'){
