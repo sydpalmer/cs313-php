@@ -96,6 +96,12 @@
             $input = '2';
           }else if($input = 'earring'){
             $input = '3';
+          }else if($input == 1){
+            $input = '1';
+          }else if($input == 2){
+            $input = '2';
+          }else if($input == 3){
+            $input = '3';
           }
         }
         
