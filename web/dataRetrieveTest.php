@@ -94,7 +94,7 @@
             $input = '1';
           }else if($input == 'necklace'){
             $input = '2';
-          }else if($input = 'earring'){
+          }else if($input == 'earring'){
             $input = '3';
           }
         }
@@ -104,7 +104,7 @@
             $prod = 'bracelet';
           } else if ($row[4] == '2'){
             $prod = 'necklace';
-          } else{
+          } else if ($row[4] == '3'){
             $prod = 'earring';
           }
           echo "<tr style='text-align: center;'>";
