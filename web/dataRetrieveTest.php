@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://www.freelogoservices.com/api/main/ph/zjHl2lgef9cYrQL0JFa7kzbw2vuDpR5PnxvE3jd9OXdE9g5shnN1i...Bv9ettdV9dsBUGw0pY">
   <title>Database Information</title>
   <style>
     table{
