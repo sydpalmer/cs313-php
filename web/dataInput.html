@@ -82,15 +82,11 @@
     function res(){
       document.getElementById("dr").focus();
       document.getElementById("error").innerHTML = "";
-      document.getElementById("tracNum").style.backgroundColor = "white";
-      document.getElementById("trailNum").style.backgroundColor = "white";
-      document.getElementById("temp").style.backgroundColor = "white";
+      document.getElementById("vanNum").style.backgroundColor = "white";
     }
     //Function to check if user can submit; produces error if cannot
     function canSubmit(){
-      if(document.getElementById("tracNum").style.backgroundColor == "red" ||
-	 document.getElementById("trailNum").style.backgroundColor == "red" ||
-	 document.getElementById("temp").style.backgroundColor == "red"){
+      if(document.getElementById("vanNum").style.backgroundColor == "red"){
         document.getElementById("canEnter").innerHTML = "CANNOT SUBMIT! Check form";
         return false;
       }
@@ -118,30 +114,17 @@
 	    </td>
     </tr>
     <tr>
-	   <td>Tractor Number:</td>
+	   <td>Van Number:</td>
 	   <td>
-	     <input type="number" id="tracNum" name="tractorNum" style="width: 4em" 
-           min="0" max="9999" onChange="moveOnNum(this, 'trailNum', min, max); checkNum(this, min, max);"required>
+	     <input type="number" id="vanNum" name="vanNum" style="width: 4em" 
+           min="0" max="9999" onChange="moveOnNum(this, 'pickUpDate', min, max); checkNum(this, min, max);"required>
 	   </td>
-    </tr>
-    <tr>
-      <td>Trailer Number:</td>
-	    <td>
-	     <input type="number" id="trailNum" name="trailerNum" style="width: 4em" 
-           min="0" max="99999" onChange="moveOnNum(this, 'pickUpDate', min, max); checkNum(this, min, max);"required>
-	    </td>
     </tr>
     <tr>
 	   <td>Pick-up Date:</td>
 	   <td>
 	     <input type="date" id="pickUpDate" name="pickupDate" 
            onchange="checkDate(this.value); "required>
-	   </td>
-   </tr>
-   <tr>
-	   <td>Temperature:</td>
-	   <td style="font-size: 30px;">
-	     <input type="number" id= "temp" name="temp" style="width: 3em" min= "-50" max="99" onchange="checkNum(this, min, max);"required> &deg;F
 	   </td>
    </tr>
    <tr>

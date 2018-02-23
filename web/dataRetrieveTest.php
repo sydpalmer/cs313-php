@@ -23,10 +23,8 @@
       <td colspan="10" style="padding:8px; font-size:125%">
     Search by: <select name="option">
       <option value="trucker_initials">Driver's Initials</option>
-      <option value="tractor_number">Tractor Number</option>
-      <option value="trailer_number">Trailer Number</option>
+      <option value="van_number">Van Number</option>
       <option value="month_year">Date</option>
-      <option value="temperature">Temperature</option>
       <option value="product_id">Product</option>
     </select>&emsp;
     Input what to search for: <input type="text" name="input" id="input" size="18" autofocus>
@@ -41,10 +39,8 @@
     </form>
     <tr style="text-align: center;">
       <th>Driver's Initials</th>
-      <th>Tractor Number</th>
-      <th>Trailer Number</th>
+      <th>Van Number</th>
       <th>Date</th>
-      <th>Temperature</th>
       <th>Product</th>
     </tr>
 
@@ -73,9 +69,9 @@
 
         foreach ($db->query('SELECT * FROM shipping') as $whole_row)
         {
-          if ($whole_row[6] == '1'){
+          if ($whole_row[4] == '1'){
             $prod = 'bracelet';
-          } else if ($whole_row[6] == '2'){
+          } else if ($whole_row[4] == '2'){
             $prod = 'necklace';
           } else{
             $prod = 'earring';
@@ -84,8 +80,6 @@
           echo "<td>$whole_row[1]</td>";
           echo "<td>$whole_row[2]</td>";
           echo "<td>$whole_row[3]</td>";
-          echo "<td>$whole_row[4]</td>";
-          echo "<td>$whole_row[5] &deg;F</td>";
           echo "<td>$prod</td>";
           echo "</tr>";
         }
@@ -106,9 +100,9 @@
         }
         
         foreach ($db->query("SELECT * FROM shipping WHERE $col = '$input'") as $row){
-          if ($row[6] == '1'){
+          if ($row[4] == '1'){
             $prod = 'bracelet';
-          } else if ($row[6] == '2'){
+          } else if ($row[4] == '2'){
             $prod = 'necklace';
           } else{
             $prod = 'earring';
@@ -117,8 +111,6 @@
           echo "<td>$row[1]</td>";
           echo "<td>$row[2]</td>";
           echo "<td>$row[3]</td>";
-          echo "<td>$row[4]</td>";
-          echo "<td>$row[5] &deg;F</td>";
           echo "<td>$prod</td>";
           echo "</tr>";
         }
