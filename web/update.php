@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h1>Sign-In</h1>
+<h1>Update info</h1>
 
 <?php  ?>
 

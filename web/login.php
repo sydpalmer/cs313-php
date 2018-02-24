@@ -40,24 +40,20 @@
 		$username = $_POST['username'];
 
 		$password = $_POST['password'];
-echo "<p>we got the username and password</p><br>";
+		
 		try
 		{
 
 			foreach ($db->query("SELECT password, user_id FROM users WHERE username = '$username'") as $row){
-echo "<p>We got the row</p>";
 				$valid = password_verify($password, $row['password']);
-echo "<p>We validated</p>";
+
 				$user_id = $row['user_id'];
-echo "<p>We set the session</p>";
 			}
    			
    			if ($valid) {
       			$_SESSION['user_id'] = $user_id;
-echo "<p>They matched!</p><br>";
       			header("refresh:5;url=update.php");
    			} else {
-echo "<p>They didn't match</p>";
       			header("refresh:5;url=login.php");
    			}
 	
