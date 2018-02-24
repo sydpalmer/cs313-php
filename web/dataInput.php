@@ -38,6 +38,7 @@
 
 $result = $db->query($sql);
 
+echo "Result: $result";
 if($result){
 echo "Entered data successfully\n";
 }
