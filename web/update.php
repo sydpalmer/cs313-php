@@ -70,7 +70,7 @@
       			<option value="product_id">Product</option>
     		</select>&emsp;
     		Change to: <input type="text" name="input" id="input" size="18" autofocus>
-    		For record: <input type="number" name="record" id="record" size="2em">
+    		For record: <input type="number" name="record" id="record" style="width: 2em">
     		<input type="submit" value="Update" name="submit"/>
       		</td>
     	</tr>
