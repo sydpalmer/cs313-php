@@ -52,8 +52,9 @@
    			
    			if ($valid) {
       			$_SESSION['user_id'] = $user_id;
-      			header("refresh:5;url=update.php");
+      			header("refresh:1;url=update.php");
    			} else {
+   				echo "<script>alert("Incorrect Password");</script>";
       			header("refresh:5;url=login.php");
    			}
 	
