@@ -2,7 +2,7 @@
 
 $passwordHash = password_hash('SydGrad2014', PASSWORD_DEFAULT);
 
-echo "we're updating users";
+echo "we're updating users<br>";
 // default Heroku Postgres configuration URL
     $dbUrl = getenv('DATABASE_URL');
 
