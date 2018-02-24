@@ -103,15 +103,15 @@
 
 if(isset($_GET['submit'])){
   	//Update the table in the database
-  	$sql = "UPDATE shipping SET $option = $input WHERE id = $record";
+  	$sql = "UPDATE shipping SET $option = '$input' WHERE id = '$record'";
 
   	$result = $db->query($sql);
 
   	if($result){
 	echo "Updated data successfully\n";
-	}
 	header("refresh:5;url=dataRetrieveTest.php");
 	die(); // we always include a die after redirects.
+	}
 }
 ?>
 
