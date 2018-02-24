@@ -52,7 +52,7 @@
             $prod = 'earring';
           }
 
-          echo "<option value = '$row[0]'>$row[0]: Driver - $row[1], Van - $row[2], Date - $row[3], Product: $prod</option>";
+          echo "<option value='$row[0]'>$row[0]: Driver - $row[1], Van - $row[2], Date - $row[3], Product: $prod</option>";
         }
       ?>
     </select>
@@ -79,9 +79,9 @@
 </div>
 <?php  
 	//Get all the data from the web form
-  	$option=$_GET['option'];
-  	$record=$_GET['record'];
-  	$input=$_GET['input'];
+  	$option = $_GET['option'];
+  	$record = $_GET['record'];
+  	$input = $_GET['input'];
 
 echo "<p>Option: $option, Record/ID: $record, Input: $input</p>";
 
