@@ -79,9 +79,9 @@
 </div>
 <?php  
 	//Get all the data from the web form
-  	$option=test_input($_POST['option']);
-  	$record=test_input($_POST['record']);
-  	$input=test_input($_POST['input']);
+  	$option=test_input($_GET['option']);
+  	$record=test_input($_GET['record']);
+  	$input=test_input($_GET['input']);
 
   	//Function to make sure each piece of data has no illegal characters
   	function test_input($data) {
@@ -106,12 +106,10 @@ if(isset($_GET['submit'])){
   	$sql = "UPDATE shipping SET $option = '$input' WHERE id = '$record'";
 
   	$result = $db->query("UPDATE shipping SET $option='$input' WHERE id='$record'");
-echo "Result: $result";
-  	if($result){
+
 	echo "Updated data successfully\n";
 	header("refresh:5;url=dataRetrieveTest.php");
 	die(); // we always include a die after redirects.
-	}
 }
 ?>
 
