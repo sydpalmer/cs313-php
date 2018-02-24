@@ -70,7 +70,7 @@
       			<option value="product_id">Product</option>
     		</select>&emsp;
     		Change to: <input type="text" name="input" id="input" size="18" autofocus>
-    		For record: <input type="number" name="record" id="record" size="2">
+    		For record: <input type="number" name="record" id="record" size="2em">
     		<input type="submit" value="Update" name="submit"/>
       		</td>
     	</tr>
@@ -83,8 +83,6 @@
   	$option = $_GET['option'];
   	$record = $_GET['record'];
   	$input = $_GET['input'];
-
-echo "<p>Option: $option, Record/ID: $record, Input: $input</p>";
 
   	//Function to make sure each piece of data has no illegal characters
   	function test_input($data) {
