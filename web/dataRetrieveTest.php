@@ -67,7 +67,7 @@
 
       if(isset($_GET['allEntries'])){
 
-        foreach ($db->query('SELECT * FROM shipping') as $whole_row)
+        foreach ($db->query('SELECT * FROM shipping INNER JOIN product ON sipping.product_id = product.product_id') as $whole_row)
         {
           if ($whole_row[4] == '1'){
             $prod = 'bracelet';
