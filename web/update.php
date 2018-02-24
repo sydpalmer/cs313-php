@@ -41,7 +41,7 @@
 <h1>Update info</h1>
 <div>
       <?php
-      echo "<select name='record'>";
+      echo "<select name='id'>";
       	foreach ($db->query("SELECT * FROM shipping WHERE trucker_initials = '$choice'") as $row)
         {
           if ($row[4] == '1'){
@@ -52,7 +52,7 @@
             $prod = 'earring';
           }
 
-          echo "<option id='rec' value='" . $row[0] . "'>$row[0]: Driver - $row[1], Van - $row[2], Date - $row[3], Product: $prod</option>";
+          echo "<option value='" . $row[0] . "'>$row[0]: Driver - $row[1], Van - $row[2], Date - $row[3], Product: $prod</option>";
         }
         echo "</select>";
       ?>
@@ -70,6 +70,7 @@
       			<option value="product_id">Product</option>
     		</select>&emsp;
     		Change to: <input type="text" name="input" id="input" size="18" autofocus>
+    		For record: <input type="number" name="record" id="record" size="2">
     		<input type="submit" value="Update" name="submit"/>
       		</td>
     	</tr>
@@ -78,16 +79,6 @@
 
 </div>
 <?php
-
-	$doc = new DomDocument;
-
-	// We need to validate our document before refering to the id
-	$doc->validateOnParse = true;
-	$doc->getElementById('rec');
-
-	$rec = $doc->nodeValue;
-echo "Record: $rec";
-
 	//Get all the data from the web form
   	$option = $_GET['option'];
   	$record = $_GET['record'];
