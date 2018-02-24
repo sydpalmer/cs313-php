@@ -52,7 +52,7 @@
             $prod = 'earring';
           }
 
-          echo "<option id='rec' value='$row[0]'>$row[0]: Driver - $row[1], Van - $row[2], Date - $row[3], Product: $prod</option>";
+          echo "<option id='rec' value='" . $row[0] . "'>$row[0]: Driver - $row[1], Van - $row[2], Date - $row[3], Product: $prod</option>";
         }
         echo "</select>";
       ?>
