@@ -52,7 +52,7 @@
             $prod = 'earring';
           }
 
-          echo '<option value="' . $row[0] . '">' . $row[0] . ': Driver - ' . $row[1] . ', Van - ' . $row[2] . ', Date - ' . $row[3] . ', Product: ' . $prod . '</option>';
+          echo '<option name="id" value="' . $row[0] . '">' . $row[0] . ': Driver - ' . $row[1] . ', Van - ' . $row[2] . ', Date - ' . $row[3] . ', Product: ' . $prod . '</option>';
         }
         echo "</select>";
       ?>
@@ -80,7 +80,7 @@
 <?php  
 	//Get all the data from the web form
   	$option = $_GET['option'];
-  	$record = $_GET['record'];
+  	$record = $_GET['id'];
   	$input = $_GET['input'];
 
 echo "<p>Option: $option, Record/ID: $record, Input: $input</p>";
