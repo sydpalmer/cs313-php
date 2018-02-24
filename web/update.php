@@ -52,7 +52,7 @@
             $prod = 'earring';
           }
 
-          echo "<option value='" . $row[0] . "'>$row[0]: Driver - $row[1], Van - $row[2], Date - $row[3], Product: $prod . </option>";
+          echo "<option id='rec' value='$row[0]'>$row[0]: Driver - $row[1], Van - $row[2], Date - $row[3], Product: $prod</option>";
         }
         echo "</select>";
       ?>
@@ -77,7 +77,17 @@
 	</table>
 
 </div>
-<?php  
+<?php
+
+	$doc = new DomDocument;
+
+	// We need to validate our document before refering to the id
+	$doc->validateOnParse = true;
+	$doc->getElementById('rec');
+
+	$rec = $doc.value;
+echo "Record: $rec";
+
 	//Get all the data from the web form
   	$option = $_GET['option'];
   	$record = $_GET['record'];
