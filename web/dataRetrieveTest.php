@@ -119,7 +119,9 @@
 </table>
 <br>
   <div style="text-align: center;">
-    <input type="submit" name="update" value="Update Record">
+    <form action="login.php">
+      <input type="submit" name="update" value="Update Record">
+    </form>
   </div>
 </body>
 </html>
