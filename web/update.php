@@ -101,6 +101,7 @@
     	}
   	}
 
+if(isset($_GET['submit'])){}
   	//Update the table in the database
   	$sql = "UPDATE shipping SET '$option' = '$input' WHERE id = '$record'";
 
@@ -110,6 +111,7 @@
 
 	header("refresh:5;url=update.php");
 	die(); // we always include a die after redirects.
+}
 ?>
 
 </body>
