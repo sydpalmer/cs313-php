@@ -13,65 +13,7 @@
    <button type="submit" name="login">Submit</button>
 </form>
 
-<?php
-	session_start();
 
-	// default Heroku Postgres configuration URL
-    $dbUrl = getenv('DATABASE_URL');
-
-    $dbopts = parse_url($dbUrl);
-
-    $dbHost = $dbopts["host"];
-    $dbPort = $dbopts["port"];
-    $dbUser = $dbopts["user"];
-    $dbPassword = $dbopts["pass"];
-    $dbName = ltrim($dbopts["path"],'/');
-
-    try {
-    	$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-    }
-    catch (PDOException $ex) {
-    	print "<p>error: $ex->getMessage() </p>\n\n";
-        die();
-    }
-
-    if(isset($_POST['login']){
-
-		$username = $_POST['username'];
-
-		$password = $_POST['password'];
-
-		try
-		{
-			$query = "SELECT password, user_id FROM users WHERE username = $username";
-   			$statement = $db->query($query);
-   
-   			$row = $statement->fetch(PDO::FETCH_ASSOC);
-
-   			$valid = password_verify($password, $row['password']);
-
-   			$user_id = $row['user_id'];
-
-   			if ($valid) {
-      			$_SESSION['user_id'] = $user_id;
-      			header("Location: update.php");
-   			} else {
-      			header("Location: login.php");
-   			}
-	
-		}
-		catch (Exception $ex)
-		{
-			// Please be aware that you don't want to output the Exception message in
-			// a production environment
-			echo "Error with DB. Details: $ex";
-			die();
-		}
-
-	}
-
-
-?> 
 
 
 </body>
