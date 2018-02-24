@@ -109,7 +109,7 @@ if(isset($_GET['submit'])){
 
 	echo "Updated data successfully\n";
 
-	header("refresh:5;url=update.php");
+	header("refresh:5;url=dataRetrieveTest.php");
 	die(); // we always include a die after redirects.
 }
 ?>
