@@ -107,8 +107,9 @@ if(isset($_GET['submit'])){
 
   	$result = $db->query($sql);
 
+  	if($result){
 	echo "Updated data successfully\n";
-
+	}
 	header("refresh:5;url=dataRetrieveTest.php");
 	die(); // we always include a die after redirects.
 }

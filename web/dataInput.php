@@ -38,8 +38,9 @@
 
 $result = $db->query($sql);
 
+if($result){
 echo "Entered data successfully\n";
-
+}
 header("refresh:5;url=dataRetrieveTest.php");
 
 die(); // we always include a die after redirects.
