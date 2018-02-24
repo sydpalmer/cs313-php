@@ -1,9 +1,8 @@
 <?php
-session_start();
 
 $passwordHash = password_hash('SydGrad2014', PASSWORD_DEFAULT);
 
-
+echo "we're updating users";
 // default Heroku Postgres configuration URL
     $dbUrl = getenv('DATABASE_URL');
 
@@ -25,7 +24,7 @@ $passwordHash = password_hash('SydGrad2014', PASSWORD_DEFAULT);
 
 try
 {
-	$query = 'INSERT INTO users (username, password) VALUES('spalmer', :passwordHash)';
+	$query = "INSERT INTO users (username, password) VALUES('spalmer', :passwordHash)";
 	$statement = $db->prepare($query);
    
 	$statement->bindValue(':passwordHash', $passwordHash);
@@ -40,5 +39,5 @@ catch (Exception $ex)
 	echo "Error with DB. Details: $ex";
 	die();
 }
-
+echo "completed!";
 ?>
