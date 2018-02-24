@@ -18,6 +18,12 @@
     	print "<p>error: $ex->getMessage() </p>\n\n";
         die();
     }
+
+    if($_SESSION['user_id'] == 1){
+    	$choice = 'SP';
+    }else{
+    	$choice = 'JP';
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,7 +37,7 @@
 <div>
 	<select name="option">
       <?php
-      	foreach ($db->query("SELECT * FROM shipping") as $row)
+      	foreach ($db->query("SELECT * FROM shipping WHERE trucker_initials = '$choice'") as $row)
         {
           if ($row[4] == '1'){
             $prod = 'bracelet';
