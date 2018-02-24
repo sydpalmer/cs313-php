@@ -47,10 +47,30 @@
             $prod = 'earring';
           }
 
-          echo "<option>$row[0]: Driver - $row[1], Van - $row[2], Date - $row[3], Product: $prod</option>";
+          echo "<option value = '$row[0]'>$row[0]: Driver - $row[1], Van - $row[2], Date - $row[3], Product: $prod</option>";
         }
       ?>
     </select>
+</div>
+
+<div>
+	<table>
+    <form>
+    	<tr style="text-align: center;">
+    		<td colspan="10" style="padding:8px; font-size:125%">
+    		Update: <select name="option">
+      			<option value="trucker_initials">Driver's Initials</option>
+      			<option value="van_number">Van Number</option>
+      			<option value="month_year">Date</option>
+      			<option value="product_id">Product</option>
+    		</select>&emsp;
+    		Change to: <input type="text" name="input" id="input" size="18" autofocus>
+    		<input type="submit" value="Update" name="submit"/>
+      		</td>
+    	</tr>
+    </form>
+	</table>
+
 </div>
 <?php  ?>
 
