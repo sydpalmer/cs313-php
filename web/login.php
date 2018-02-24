@@ -44,16 +44,15 @@ echo "<p>we got the username and password</p><br>";
 		try
 		{
 			$query = "SELECT password, user_id FROM users WHERE username = $username";
-   			$statement = $db->query($query);
-echo "<p>We got to the query</p><br>";
-   
-   			$row = $statement->fetch(PDO::FETCH_ASSOC);
-echo "<p>We got the row</p>";
 
-   			$valid = password_verify($password, $row['password']);
+			foreach ($db->query($query) as $row){
+echo "<p>We got the row</p>";
+				$valid = password_verify($password, $row['password']);
 echo "<p>We validated</p>";
-   			$user_id = $row['user_id'];
+				$user_id = $row['user_id'];
 echo "<p>We set the session</p>";
+			}
+   			
    			if ($valid) {
       			$_SESSION['user_id'] = $user_id;
 echo "<p>They matched!</p><br>";
