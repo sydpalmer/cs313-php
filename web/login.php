@@ -35,7 +35,7 @@
         die();
     }
 
-    if(isset($_POST['login']){
+    if(isset($_POST['login'])){
 
 		$username = $_POST['username'];
 
