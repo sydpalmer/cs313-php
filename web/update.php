@@ -103,9 +103,9 @@
 
 if(isset($_GET['submit'])){
   	//Update the table in the database
-  	$sql = "UPDATE shipping SET $option = '$input' WHERE id = '$record'";
+  	$sql = "UPDATE shipping SET $option='$input' WHERE id='$record'";
 
-  	$result = $db->query("UPDATE shipping SET $option='$input' WHERE id='$record'");
+  	$result = $db->query($sql);
 
 	echo "Updated data successfully\n";
 	header("refresh:5;url=dataRetrieveTest.php");
