@@ -85,7 +85,7 @@
 	$doc->validateOnParse = true;
 	$doc->getElementById('rec');
 
-	$rec = $doc.value;
+	$rec = $doc->nodeValue;
 echo "Record: $rec";
 
 	//Get all the data from the web form
