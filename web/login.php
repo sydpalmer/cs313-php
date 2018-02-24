@@ -43,9 +43,8 @@
 echo "<p>we got the username and password</p><br>";
 		try
 		{
-			$query = "SELECT password, user_id FROM users WHERE username = $username";
 
-			foreach ($db->query($query) as $row){
+			foreach ($db->query("SELECT password, user_id FROM users WHERE username = '$username'") as $row){
 echo "<p>We got the row</p>";
 				$valid = password_verify($password, $row['password']);
 echo "<p>We validated</p>";
