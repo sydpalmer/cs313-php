@@ -40,11 +40,12 @@
 		$username = $_POST['username'];
 
 		$password = $_POST['password'];
-
+echo "<p>we got the username and password</p><br>";
 		try
 		{
 			$query = "SELECT password, user_id FROM users WHERE username = $username";
    			$statement = $db->query($query);
+echo "<p>We got to the query</p><br>";
    
    			$row = $statement->fetch(PDO::FETCH_ASSOC);
 
@@ -54,9 +55,11 @@
 
    			if ($valid) {
       			$_SESSION['user_id'] = $user_id;
-      			header("Location: update.php");
+echo "<p>They matched!</p><br>";
+      			header("refresh:5;url=update.php");
    			} else {
-      			header("Location: login.php");
+echo "<p>They didn't match</p>";
+      			header("refresh:5;url=login.php");
    			}
 	
 		}
