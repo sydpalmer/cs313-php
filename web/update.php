@@ -105,7 +105,7 @@ if(isset($_GET['submit'])){
   	//Update the table in the database
   	$sql = "UPDATE shipping SET $option = '$input' WHERE id = '$record'";
 
-  	$result = $db->query("UPDATE shipping SET '$option' = '$input' WHERE id = '$record'");
+  	$result = $db->query("UPDATE shipping SET $option='$input' WHERE id='$record'");
 echo "Result: $result";
   	if($result){
 	echo "Updated data successfully\n";
