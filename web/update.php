@@ -79,9 +79,9 @@
 </div>
 <?php  
 	//Get all the data from the web form
-  	$option=test_input($_GET['option']);
-  	$record=test_input($_GET['record']);
-  	$input=test_input($_GET['input']);
+  	$option=$_GET['option'];
+  	$record=$_GET['record'];
+  	$input=$_GET['input'];
 
 echo "<p>Option: $option, Record/ID: $record, Input: $input</p>";
 
