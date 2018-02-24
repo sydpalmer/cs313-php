@@ -69,18 +69,18 @@
 
         foreach ($db->query('SELECT shipping.id, shipping.trucker_initials, shipping.van_number, shipping.month_year, shipping.product_id FROM shipping INNER JOIN product ON shipping.product_id = product.product_id') as $whole_row)
         {
-          if ($whole_row[4] == '1'){
-            $prod = 'bracelet';
-          } else if ($whole_row[4] == '2'){
-            $prod = 'necklace';
-          } else{
-            $prod = 'earring';
-          }
+          //if ($whole_row[4] == '1'){
+            //$prod = 'bracelet';
+          //} else if ($whole_row[4] == '2'){
+         //   $prod = 'necklace';
+         // } else{
+         //   $prod = 'earring';
+        //  }
           echo "<tr style='text-align: center;'>";
           echo "<td>$whole_row[1]</td>";
           echo "<td>$whole_row[2]</td>";
           echo "<td>$whole_row[3]</td>";
-          echo "<td>$prod</td>";
+          echo "<td>$whole_row[4]</td>";
           echo "</tr>";
         }
 
