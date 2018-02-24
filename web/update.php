@@ -40,8 +40,8 @@
 
 <h1>Update info</h1>
 <div>
-	<select name="record">
       <?php
+      echo "<select name='record'>";
       	foreach ($db->query("SELECT * FROM shipping WHERE trucker_initials = '$choice'") as $row)
         {
           if ($row[4] == '1'){
@@ -54,8 +54,8 @@
 
           echo "<option value='$row[0]'>$row[0]: Driver - $row[1], Van - $row[2], Date - $row[3], Product: $prod</option>";
         }
+        echo "</select>";
       ?>
-    </select>
 </div>
 <br><br>
 <div>
