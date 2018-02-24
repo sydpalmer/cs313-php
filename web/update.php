@@ -40,7 +40,7 @@
 
 <h1>Update info</h1>
 <div>
-	<select name="option">
+	<select name="record">
       <?php
       	foreach ($db->query("SELECT * FROM shipping WHERE trucker_initials = '$choice'") as $row)
         {
@@ -77,7 +77,40 @@
 	</table>
 
 </div>
-<?php  ?>
+<?php  
+	//Get all the data from the web form
+  	$option=test_input($_POST['option']);
+  	$record=test_input($_POST['record']);
+  	$input=test_input($_POST['input']);
+
+  	//Function to make sure each piece of data has no illegal characters
+  	function test_input($data) {
+    	$data = trim($data);
+    	$data = stripslashes($data);
+    	$data = htmlspecialchars($data);
+    	return $data;
+  	}
+
+	if($option == 'product_id'){
+    	if($input == 'bracelet'){
+        	$input = '1';
+    	}else if($input == 'necklace'){
+        	$input = '2';
+    	}else if($input == 'earring'){
+        	$input = '3';
+    	}
+  	}
+
+  	//Update the table in the database
+  	$sql = "UPDATE shipping SET '$option' = '$input' WHERE id = '$record'";
+
+  	$result = $db->query($sql);
+
+	echo "Updated data successfully\n";
+
+	header("refresh:5;url=update.php");
+	die(); // we always include a die after redirects.
+?>
 
 </body>
 </html>

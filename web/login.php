@@ -71,7 +71,7 @@
 
 
 	}
-
+die(); // we always include a die after redirects.
 ?>
 
 

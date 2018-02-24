@@ -40,8 +40,8 @@ $result = $db->query($sql);
 
 echo "Entered data successfully\n";
 
-mysqli_close($conn);
-
 header("refresh:5;url=dataRetrieveTest.php");
+
+die(); // we always include a die after redirects.
 
 ?>

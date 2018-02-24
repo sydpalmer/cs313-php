@@ -73,7 +73,7 @@
             $prod = 'bracelet';
           } else if ($whole_row[4] == '2'){
             $prod = 'necklace';
-          } else{
+          } else if ($row[4] == '3'){
             $prod = 'earring';
           }
           echo "<tr style='text-align: center;'>";
