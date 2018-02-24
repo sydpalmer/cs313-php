@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <title>Teach 07</title>
+   <title>Log in</title>
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
 </head>
 <body>
@@ -43,12 +43,9 @@
 
 		try
 		{
-			$query = 'SELECT password, user_id FROM users WHERE username = :username';
-   			$statement = $db->prepare($query);
+			$query = "SELECT password, user_id FROM users WHERE username = $username";
+   			$statement = $db->query($query);
    
-			$statement->bindValue(':username', $username);
-
-   			$statement->execute();
    			$row = $statement->fetch(PDO::FETCH_ASSOC);
 
    			$valid = password_verify($password, $row['password']);
