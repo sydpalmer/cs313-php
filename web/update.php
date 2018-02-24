@@ -83,6 +83,8 @@
   	$record=test_input($_GET['record']);
   	$input=test_input($_GET['input']);
 
+echo "<p>Option: $option, Record/ID: $record, Input: $input</p>";
+
   	//Function to make sure each piece of data has no illegal characters
   	function test_input($data) {
     	$data = trim($data);
