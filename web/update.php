@@ -30,6 +30,11 @@
 <head>
    <title>Update</title>
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+   <style type="text/css">
+   table{
+      border: 2px solid black;
+    }
+    </style>
 </head>
 <body>
 
@@ -52,7 +57,7 @@
       ?>
     </select>
 </div>
-
+<br><br>
 <div>
 	<table>
     <form>
