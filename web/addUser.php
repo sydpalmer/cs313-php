@@ -1,6 +1,6 @@
 <?php
 
-$passwordHash = password_hash('SydGrad2014', PASSWORD_DEFAULT);
+$passwordHash = password_hash('guestpassword', PASSWORD_DEFAULT);
 
 echo "we're updating users<br>";
 // default Heroku Postgres configuration URL
@@ -24,7 +24,7 @@ echo "we're updating users<br>";
 
 try
 {
-	$query = "INSERT INTO users (username, password) VALUES('spalmer', :passwordHash)";
+	$query = "INSERT INTO users (username, password) VALUES('guest', :passwordHash)";
 	$statement = $db->prepare($query);
    
 	$statement->bindValue(':passwordHash', $passwordHash);
