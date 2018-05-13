@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+    <title>Storyteller</title>
+    <meta charset = "utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="display-Stories.js"></script>
+    <style>
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+        input[type="text"]{
+            font-size: 80%;
+        }
+        header {
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        h1 {
+            font-family: 'Roboto Slab';
+            color: black;
+            font-size: 110%;
+            margin: 0px;
+            padding-bottom: 5px;
+            padding-left: 10px;
+        }
+        .flex-container {
+            display: -webkit-flex;
+            display: flex;
+            flex-wrap: wrap;
+            height: 100%;
+        }
+        #logo{
+            width: 30%;
+            height: 30%;
+        }
+        #started_stories p:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: cornflowerblue" class="flex-container">
+        <img src="bookIcon.JPG" id="logo">
+        <h1><b>Story Tellers</b></h1>
+    </header><br>
+    <div id="stories">
+        <iframe src="display-Stories.php"></iframe>
+    </div>
+</body>
+</html>
